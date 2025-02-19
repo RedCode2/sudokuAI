@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sudoku AI</title>
+
+    <link rel="stylesheet" href="/resources/static/output.css" />
+    <link rel="shortcut icon" href="/resources/assets/sudoku_favicon.ico" type="image/x-icon" />
+
+    <style>
+        .bg-dots-pattern {
+            background-image: radial-gradient(circle,
+                    rgba(0, 0, 0, 0.1) 1px,
+                    transparent 1px);
+            background-size: 10px 10px;
+            /* Adjust dot size and spacing here */
+        }
+
+        /* Optional: Add a subtle background color if you want */
+        .bg-dots-pattern {
+            background-color: #f0f0f0;
+            /* Example light gray background */
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="bg-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <img src="/resources/assets/sudoku_favicon.png" alt="logo" class="w-8 mr-2" />
+                <span class="text-2xl font-bold text-indigo-600">Sudoku AI</span>
+            </a>
+
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-gray-600 hover:text-indigo-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="hidden md:flex justify-center flex-grow space-x-6">
+                <a href="#" class="text-gray-600 hover:text-indigo-600">Home</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-600">About</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-600">Solve Sudoku</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-600">Generate Sudoku</a>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="#" class="text-gray-600 hover:text-indigo-600 block px-4 py-2">Home</a>
+                    <a href="#" class="text-gray-600 hover:text-indigo-600 block px-4 py-2">About</a>
+                    <a href="#" class="text-gray-600 hover:text-indigo-600 block px-4 py-2">Solve Sudoku</a>
+                    <a href="#" class="text-gray-600 hover:text-indigo-600 block px-4 py-2">Generate Sudoku</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="h-screen flex items-center justify-center space-x-7 bg-dots-pattern">
+        <div class="bg-blue-700 text-white p-5 text-2xl text-center pb-3 rounded-sm cursor-pointer" id="goto-pg_solve">
+            <a href="/solve/index.html">Solve Sudoku</a><br />
+            <span class="text-sm text-gray-300">Solves a Sudoku Puzzle for you</span>
+        </div>
+        <div class="bg-green-600 text-white p-5 text-2xl text-center pb-3 rounded-sm cursor-pointer" id="goto-pg_generate">
+            <a href="/solve/index.html">Generate Sudoku</a><br />
+            <span class="text-sm text-gray-300">Generates a Sudoku Puzzle for you</span>
+        </div>
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuToggle.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+    </script>
+</body>
+
+</html>
