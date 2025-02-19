@@ -27,11 +27,11 @@
 </head>
 
 <body>
-    <nav class="bg-white p-4 shadow-md">
+    <nav class="bg-white dark:bg-gray-800 p-4 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
             <a href="#" class="flex items-center">
                 <img src="/resources/assets/sudoku_favicon.png" alt="logo" class="w-8 mr-2" />
-                <span class="text-2xl font-bold text-indigo-600">Sudoku AI</span>
+                <span class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">Sudoku AI</span>
             </a>
 
             <div class="md:hidden">
@@ -45,10 +45,10 @@
             </div>
 
             <div class="hidden md:flex justify-center flex-grow space-x-6">
-                <a href="#" class="text-gray-600 hover:text-indigo-600">Home</a>
-                <a href="#" class="text-gray-600 hover:text-indigo-600">About</a>
-                <a href="#" class="text-gray-600 hover:text-indigo-600">Solve Sudoku</a>
-                <a href="#" class="text-gray-600 hover:text-indigo-600">Generate Sudoku</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-600 dark:text-gray-200 dark:hover:text-indigo-400">Home</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-600 dark:text-gray-200 dark:hover:text-indigo-400">About</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-600 dark:text-gray-200 dark:hover:text-indigo-400">Solve Sudoku</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-600 dark:text-gray-200 dark:hover:text-indigo-400">Generate Sudoku</a>
             </div>
 
             <div id="mobile-menu" class="hidden md:hidden mt-4">
@@ -59,15 +59,35 @@
                     <a href="#" class="text-gray-600 hover:text-indigo-600 block px-4 py-2">Generate Sudoku</a>
                 </div>
             </div>
+            
+            <div>
+                <div>
+                    <img 
+                        src="/resources/assets/sun.png" 
+                        alt="Light Mode" 
+                        class="w-6 cursor-pointer mr-5 hidden dark:block" 
+                        id="toggle-to-light-mode"
+                    />
+                    <img 
+                        src="/resources/assets/moon.png" 
+                        alt="Dark Mode" 
+                        class="w-6 cursor-pointer mr-5 block dark:hidden" 
+                        id="toggle-to-dark-mode"
+                    />
+                </div>
+            </div>
+
         </div>
     </nav>
 
-    <div class="h-screen flex items-center justify-center space-x-7 bg-dots-pattern">
-        <div class="bg-blue-700 text-white p-5 text-2xl text-center pb-3 rounded-sm cursor-pointer" id="goto-pg_solve">
+    <div class="h-screen flex items-center justify-center space-x-10 bg-dots-pattern">
+        <div class="bg-blue-700 text-white p-7 text-2xl text-center pb-3 pt-10 rounded-sm cursor-pointer hover:bg-blue-800 transition-all ease-in-out" id="goto-pg_solve">
+            <img src="/resources/assets/sudoku_solve.png" alt="Solve Sudoku" class="w-40 mx-auto" /><br />
             <a href="/solve/index.html">Solve Sudoku</a><br />
             <span class="text-sm text-gray-300">Solves a Sudoku Puzzle for you</span>
         </div>
-        <div class="bg-green-600 text-white p-5 text-2xl text-center pb-3 rounded-sm cursor-pointer" id="goto-pg_generate">
+        <div class="bg-green-600 text-white p-6 text-2xl text-center pb-3 pt-10 rounded-sm cursor-pointer hover:bg-green-700 transition-all ease-in-out" id="goto-pg_generate">
+            <img src="/resources/assets/sudoku_generate.png" alt="Generate Sudoku" class="w-40 mx-auto" /><br />
             <a href="/solve/index.html">Generate Sudoku</a><br />
             <span class="text-sm text-gray-300">Generates a Sudoku Puzzle for you</span>
         </div>
@@ -81,6 +101,8 @@
             mobileMenu.classList.toggle("hidden");
         });
     </script>
+
+    <script src="/scripts/page-functionality.js"></script>
 </body>
 
 </html>
