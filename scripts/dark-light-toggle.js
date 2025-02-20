@@ -6,10 +6,14 @@
 
 var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
 var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+var settingsLightMode = document.getElementById('settings_light_m');
+var settingsDarkMode = document.getElementById('settings_dark_m');
 
 if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    settingsDarkMode.classList.remove('hidden');
     themeToggleLightIcon.classList.remove('hidden');
 } else {
+    settingsLightMode.classList.remove('hidden');
     themeToggleDarkIcon.classList.remove('hidden');
 }
 

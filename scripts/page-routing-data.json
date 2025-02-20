@@ -1,5 +1,6 @@
 {
     "home": "/index.html",
     "solve": "/solve/index.html",
-    "generate": "/generate/index.html"
+    "generate": "/generate/index.html",
+    "settings": "/settings/index.html"
 }
