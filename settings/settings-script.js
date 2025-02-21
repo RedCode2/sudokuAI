@@ -1,5 +1,22 @@
 var s_switchToLightMode = document.getElementById('switch-to-light-mode');
 var s_switchToDarkMode = document.getElementById('switch-to-dark-mode');
+var s_font = document.getElementById('font');
+var s_fontSize = document.getElementById('font-size');
+
+set_and_save_ff('bodyElement', localStorage.getItem('font-family'), 'font-family');
+
+function set_and_save_ff(applyToElement, fontFamily, localStorageKey) {
+    let fontTranslate = {
+        "sans": "Arial, sans-serif",
+        "serif": "Georgia, serif",
+        "monospace": "'Courier New', Courier, monospace"
+    }
+    
+    if (fontFamily in fontTranslate) {
+        document.getElementById(applyToElement).style.fontFamily = fontTranslate[fontFamily];
+        localStorage.setItem(localStorageKey, fontFamily);
+    }
+}
 
 s_switchToLightMode.addEventListener('click', function () {
     console.log('button clicked!')
@@ -16,4 +33,10 @@ s_switchToDarkMode.addEventListener('click', function () {
         localStorage.setItem('color-theme', "dark");
         document.documentElement.classList.add('dark');
     }
+})
+
+// localStorage.removeItem('font');
+
+s_font.addEventListener('change', function() {
+    set_and_save_ff('bodyElement', s_font.value, 'font-family')
 })
