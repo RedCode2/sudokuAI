@@ -1,13 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="HTMLMainElement">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sudoku AI | Settings</title>
 
+    <script src="/scripts/dark-light-toggle.js"></script>
+
+    <link rel="stylesheet" href="/resources/static/output.css" />
     <link rel="shortcut icon" href="/public/sudoku_favicon.ico" type="image/x-icon">
 </head>
-<body>
-    
+
+<body class="bg-gray-100 font-sans dark:bg-gray-900 dark:text-white">
+    <div class="flex h-screen bg-gray-100 dark:bg-gray-900 dark:text-white">
+        <aside class="w-64 bg-gray-200 p-4 dark:bg-gray-800 dark:text-white">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-700 dark:text-gray-200">Settings</h2>
+            <ul class="space-y-2">
+                <li><a href="#theme"
+                        class="block px-5 py-2 rounded-md hover:bg-gray-300 transition duration-300 text-gray-700 dark:text-gray-200 dark:hover:bg-gray-700">Theme</a>
+                </li>
+                <li><a href="#typography"
+                        class="block px-5 py-2 rounded-md hover:bg-gray-300 transition duration-300 text-gray-700 dark:text-gray-200 dark:hover:bg-gray-700">Typography</a>
+                </li>
+                <li><a href="#layout"
+                        class="block px-5 py-2 rounded-md hover:bg-gray-300 transition duration-300 text-gray-700 dark:text-gray-200 dark:hover:bg-gray-700">Layout</a>
+                </li>
+                <li><a href="#colors"
+                        class="block px-5 py-2 rounded-md hover:bg-gray-300 transition duration-300 text-gray-700 dark:text-gray-200 dark:hover:bg-gray-700">Colors</a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="flex-1 p-8 overflow-y-auto">
+            <div class="container mx-auto">
+                <h1 class="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-100">
+                    Website Appearance
+                </h1>
+
+                <div class="bg-[#fdfdfd] rounded-lg shadow-lg p-6 dark:bg-[#0c131f]">
+                    <div id="theme" class="mb-8">
+                        <h2 class="text-xl font-semibold text-gray-700 dark:text-gray-200">Theme</h2>
+
+                        <div class="container p-8 flex justify-center items-center h-screen space-x-10 -mt-20">
+                            <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-sm h-[350px] cursor-pointer hover:outline-2 hover:transition-all hover:outline-blue-400 transition delay-150 duration-300 ease-in-out" id="switch-to-light-mode">
+                                <h2 class="text-xl font-semibold mb-4 bg-white p-4 shadow-md text-gray-700 w-[24rem] -ml-6 -mt-6 rounded-t-lg"><img src="/resources/assets/sun_colored.png" alt="Sun" class="w-10 inline-flex mr-3 mb-1">Light Theme</h2>
+                                <div class="bg-gray-100 rounded-md p-4 mb-4 mt-8">
+                                    <p class="text-gray-800 mb-5">This is how the light theme will look like. <br>Text color on a light background</p>
+                                    <button
+                                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">Sample Button</button>
+                                </div>
+                            </div>
+                            <div class="bg-gray-800 rounded-lg shadow-md p-6 w-full max-w-sm h-[350px] cursor-pointer hover:outline-2 hover:transition-all hover:outline-blue-400 transition delay-150 duration-300 ease-in-out" id="switch-to-dark-mode">
+                                <h2 class="text-xl font-semibold mb-4 bg-gray-900 p-4 shadow-md text-gray-200 w-[24rem] -ml-6 -mt-6 rounded-t-lg"><img src="/resources/assets/moon.png" alt="Sun" class="w-10 inline-flex mr-3 mb-1">Dark Theme</h2>
+                                <div class="bg-gray-900 rounded-md p-4 mb-4 mt-8">
+                                    <p class="text-gray-100 mb-5">This is how the light theme will look like. <br>Text color on a light background</p>
+                                    <button
+                                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">Sample Button</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="typography" class="mb-8">
+                        <h2 class="text-xl font-semibold mb-4 text-gray-700 dark:text-gray-200">Typography</h2>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="font" class="block text-gray-600 font-medium mb-4">Choose a Font
+                                    Family</label>
+                                <select id="font" name="font"
+                                    class="w-full border-none rounded-md px-3 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer bg-gray-200 dark:bg-gray-800">
+                                    <option value="sans">Sans-Serif</option>
+                                    <option value="serif">Serif</option>
+                                    <option value="monospace">Monospace</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="font-size" class="block text-gray-600 font-medium">Font Size</label>
+                                <input type="number" id="font-size" name="font-size"
+                                    class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    value="16" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="layout" class="mb-8">
+                        <h2 class="text-xl font-semibold mb-4 text-gray-700">Layout</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="layout" class="block text-gray-600 font-medium">Layout Style</label>
+                                <select id="layout" name="layout"
+                                    class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="wide">Wide</option>
+                                    <option value="boxed">Boxed</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="colors" class="mb-8">
+                        <h2 class="text-xl font-semibold mb-4 text-gray-700">Colors</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="primary-color" class="block text-gray-600 font-medium">Primary Color</label>
+                                <input type="color" id="primary-color" name="primary-color"
+                                    class="w-full h-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    value="#007bff" />
+                            </div>
+                            <div>
+                                <label for="accent-color" class="block text-gray-600 font-medium">Accent Color</label>
+                                <input type="color" id="accent-color" name="accent-color"
+                                    class="w-full h-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    value="#6c757d" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <button
+                            class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-green-300">
+                            Save Changes
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/scripts/dark-light-toggle.js"></script>
+    <script src="settings-script.js" type="module"></script>
 </body>
+
 </html>
