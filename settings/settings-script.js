@@ -19,7 +19,7 @@ function set_and_save_ff(applyToElement, fontFamily, localStorageKey) {
     }
 }
 
-function set_and_save_fs(applyToElement, fontSize, localStorageKey) {
+function set_and_save_fs(fontSize, localStorageKey) {
     let fontSizeTranslate = {
         "small": "14px",
         "medium": "16px",
