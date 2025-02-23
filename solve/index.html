@@ -1,14 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="HTMLMainElement">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sudoku AI | Solve Sudoku</title>
 
-    <link rel="stylesheet" href="/dist/static/output.css">
+    <script src="/scripts/page-functionality.js" type="module"></script>
+
+    <link rel="stylesheet" href="/resources/static/output.css">
     <link rel="shortcut icon" href="/public/sudoku_favicon.ico" type="image/x-icon">
 </head>
-<body>
-    <p>Solve sudoku</p>
+<body id="bodyElement">
+    <div class="flex h-screen bg-white dark:bg-strict-gray dark:text-white">
+        <aside class="w-64 bg-gray-100 dark:bg-strict-gray dark:text-white border-gray-200 border-r-1">
+            <h2 class="mb-1 bg-light-gray-3 text-gray-700 dark:text-gray-200 dark:bg-strict-gray-2 text-xs font-bold dark:hover:bg-strict-gray-3" id="solver_window_settings_header">
+                <img src="/resources/assets/downward-arrow_dark_m.png" alt="arrow" class="w-3 mb-0.5 mr-0.5 hidden dark:inline-flex" id="solver_window_settings_arrow">
+                <img src="/resources/assets/downward-arrow_light_m.png" alt="arrow" class="inline-flex w-3 mb-0.5 mr-0.5 dark:hidden" id="solver_window_settings_arrow">
+                Window
+            </h2>
+            
+            <div id="solver_window_settings">
+                <div id="solver_window_settings_to_dark" class="text-xs hover:bg-gray-300 dark:hover:bg-strict-gray-2 pl-3 flex items-center">
+                    <input
+                        type="radio"
+                        name="solver_window_theme"
+                        id="solver_window_theme_dark_checkbox"
+                        value="dark"
+                        class="peer sr-only"
+                    >
+                    <div class="w-2.5 h-2.5 border border-black peer-checked:bg-blue-600 dark:peer-checked:bg-gray-300 peer-checked:border-black peer-checked:border-1 peer-checked:bg-clip-content rounded-sm inline-flex bg-gray-400 dark:bg-strict-gray-3 dark:border-black"></div>
+                    <label for="solver_window_theme_dark_checkbox" class="ml-1">Dark</label>
+                </div>
+                <div id="solver_window_settings_to_light" class="text-xs hover:bg-gray-300 dark:hover:bg-strict-gray-2 pl-3 mt-1 flex items-center">
+                    <input
+                        type="radio"
+                        name="solver_window_theme"
+                        id="solver_window_theme_light_checkbox"
+                        value="light"
+                        class="peer sr-only"
+                    >
+                    <div class="w-2.5 h-2.5 border border-black peer-checked:bg-blue-600 dark:peer-checked:bg-gray-300 peer-checked:border-black peer-checked:border-1 peer-checked:bg-clip-content rounded-sm inline-flex bg-gray-400 dark:bg-strict-gray-3 dark:border-black"></div>
+                    <label for="solver_window_theme_light_checkbox" class="ml-1">Light</label>
+                </div>
+                <div id="solver_window_ff" class="text-xs hover:bg-gray-300 dark:hover:bg-strict-gray-2 pl-3 mt-1 flex items-center">
+                    <label for="solver_window_font_family" class="mr-1">Font Family:</label>
+                    <select name="solver_window_font_family" id="solver_window_font_family" class="text-xs dark:bg-strict-gray-3 dark:text-white pl-1">
+                        <option value="sans" class="font-sans">Sans-Serif (Recommended)</option>
+                        <option value="serif" class="font-serif">Serif</option>
+                        <option value="mono" class="font-mono">Monospace</option>
+                    </select>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="/scripts/dark-light-toggle.js"></script>
+    <script src="/scripts/page-functionality.js" type="module"></script>
 </body>
 </html>

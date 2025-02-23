@@ -4,4 +4,13 @@
 
 @theme {
     --color-gray-250: #dce1ea;
+    --color-strict-gray: #454545;
+    --color-strict-gray-1: #3f3f3f;
+    --color-strict-gray-2: #3a3a3a;
+    --color-strict-gray-3: #2f2f2f;
+    --color-light-gray: #f5f5f5;
+    --color-light-gray-1: #f0f0f0;
+    --color-light-gray-2: #e5e5e5;
+    --color-light-gray-3: #d5d5d5;
+    --color-light-gray-4: #c0c0c0;
 }
