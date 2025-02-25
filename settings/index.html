@@ -38,13 +38,15 @@
                 <li><a href="#typography"
                         class="block px-5 py-2 rounded-md hover:bg-gray-300 transition duration-300 text-gray-700 dark:text-gray-200 dark:hover:bg-gray-700">Typography</a>
                 </li>
+                <li><a href="#solver_log"
+                    class="block px-5 py-2 rounded-md hover:bg-gray-300 transition duration-300 text-gray-700 dark:text-gray-200 dark:hover:bg-gray-700">Solver Log</a></li>
             </ul>
         </aside>
 
         <main class="flex-1 p-8 overflow-y-auto">
             <div class="container mx-auto">
                 <h1 class="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-100">
-                    Website Appearance
+                    Settings
                 </h1>
 
                 <div class="bg-[#fdfdfd] rounded-lg shadow-lg p-6 dark:bg-[#0c131f]">
@@ -96,6 +98,93 @@
                         </div>
                     </div>
 
+                    <hr class="mb-4">
+
+                    <div id="solver_log" class="mb-8">
+                        <h2 class="text-xl font-semibold mb-4 text-gray-700 dark:text-gray-200">Solver Log</h2>
+
+                        <div>
+                            <input type="checkbox" name="solver_time_of_log" id="show_log_time" checked>
+                            <label for="show_log_time" class="ml-1">Show Log Time</label><br><br>
+
+                            <label for="solver_time_of_log_color">Dark Mode Log Time Color:</label>
+                            <input 
+                                type="color" 
+                                name="solver_time_of_log_color" 
+                                id="solver_time_of_log_color" 
+                                class="h-5 mt-2 -mb-20 ml-10 rounded-sm border-1 border-black"
+                                value="#05df72"
+                            ><br>
+
+                            <label for="solver_log_task_color">Dark Mode Log Task Color:</label>
+                            <input 
+                                type="color"
+                                name="solver_log_task_color" 
+                                id="solver_log_task_color" 
+                                value="#b293c8"
+                                class="h-5 mt-2 -mb-20 ml-11 rounded-sm border-1 border-black"    
+                            ><br>
+
+                            <label for="solver_log_success_color">Dark Mode Log Success Color:</label>
+                            <input 
+                                type="color"
+                                name="solver_log_success_color" 
+                                id="solver_log_success_color" 
+                                value="#7bf1a8"
+                                class="h-5 mt-2 -mb-20 ml-4 rounded-sm border-1 border-black"    
+                            ><br>
+
+                            <label for="solver_log_error_color">Dark Mode Log Error Color:</label>
+                            <input 
+                                type="color"
+                                name="solver_log_error_color" 
+                                id="solver_log_error_color" 
+                                value="#e9b58a"
+                                class="h-5 mt-2 -mb-20 ml-10 rounded-sm border-1 border-black"    
+                            ><br><br>
+
+                            <label for="solver_time_of_log_color_light_m">Light Mode Log Time Color:</label>
+                            <input 
+                                type="color"
+                                name="solver_time_of_log_color_light_m" 
+                                id="solver_time_of_log_color_light_m" 
+                                value="#73b39d"
+                                class="h-5 mt-2 -mb-20 ml-10 rounded-sm border-1 border-black"    
+                            ><br>
+
+                            <label for="solver_log_task_color_light_m">Light Mode Log Task Color:</label>
+                            <input 
+                                type="color"
+                                name="solver_log_task_color_light_m" 
+                                id="solver_log_task_color_light_m" 
+                                value="#57609a"
+                                class="h-5 mt-2 -mb-20 ml-11 rounded-sm border-1 border-black"    
+                            ><br>
+
+                            <label for="solver_log_success_color_light_m">Light Mode Log Success Color:</label>
+                            <input 
+                                type="color"
+                                name="solver_log_success_color_light_m" 
+                                id="solver_log_success_color_light_m" 
+                                value="#5eb18f"
+                                class="h-5 mt-2 -mb-20 ml-4 rounded-sm border-1 border-black"    
+                            ><br>
+
+                            <label for="solver_log_error_color_light_m">Light Mode Log Error Color:</label>
+                            <input 
+                                type="color"
+                                name="solver_log_error_color_light_m" 
+                                id="solver_log_error_color_light_m" 
+                                value="#c48c66"
+                                class="h-5 mt-2 -mb-20 ml-10 rounded-sm border-1 border-black"    
+                            ><br><br>
+
+                            <button type="button" class="bg-green-500 pl-4 pr-4 pt-2 pb-2 hover:bg-green-600 cursor-pointer rounded-md mt-6 font-bold focus:outline-2 focus:outline-blue-500 text-white" id="reset_solver_log_settings_btn">Reset</button>
+                        </div>
+                    </div>
+
+                    <hr class="mb-4">
+
                     <div class="mt-8 space-x-5">
                         <button
                             type="button"
@@ -114,7 +203,7 @@
     </div>
 
     <script src="/scripts/dark-light-toggle.js"></script>
-    <script src="settings-script.js" type="module"></script>
+    <script src="/scripts/settings-script.js" type="module"></script>
 </body>
 
 </html>

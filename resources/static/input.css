@@ -4,11 +4,16 @@
 
 @theme {
     --color-gray-250: #dce1ea;
+    --color-gray-350: #c5cfd9;
+    --color-gray-375: #bfc9d3;
     --color-strict-gray: #454545;
+    --color-strict-gray-0.5: #404040;
     --color-strict-gray-1: #3f3f3f;
     --color-strict-gray-2: #3a3a3a;
+    --color-strict-gray-2.5: #353535;
     --color-strict-gray-3: #2f2f2f;
     --color-strict-gray-4: #1f1f1f;
+    --color-strict-gray-5: #0f0f0f;
     --color-light-gray: #f5f5f5;
     --color-light-gray-1: #f0f0f0;
     --color-light-gray-2: #e5e5e5;

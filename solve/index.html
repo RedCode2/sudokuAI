@@ -6,15 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sudoku AI | Solve Sudoku</title>
 
-    <script src="/scripts/solver-page-functionality.js"></script>
-
     <link rel="stylesheet" href="/resources/static/output.css">
     <link rel="shortcut icon" href="/public/sudoku_favicon.ico" type="image/x-icon">
 </head>
 
-<body id="bodyElement">
-    <div class="flex h-screen bg-white dark:bg-strict-gray dark:text-white">
-        <aside class="w-84 bg-gray-100 dark:bg-strict-gray dark:text-white border-gray-200 border-r-1">
+<body id="bodyElement" class="flex flex-col h-screen">
+    <div class="flex flex-grow bg-white dark:bg-strict-gray dark:text-white">
+        <aside class="w-84 bg-gray-100 dark:bg-strict-gray dark:text-white dark:border-gray-200 border-black border-r-1">
             <h2 class="mb-1 bg-light-gray-3 text-gray-700 dark:text-gray-200 dark:bg-strict-gray-2 font-bold dark:hover:bg-strict-gray-3"
                 id="solver_window_settings_header">
                 <img src="/resources/assets/downward-arrow_dark_m.png" alt="arrow"
@@ -69,10 +67,40 @@
                 </div>
             </div>
         </aside>
+        <div class="flex-grow flex flex-col">
+            <div class="flex-grow bg-gray-100 dark:bg-strict-gray">
+                <div class="m-20">
+                    <input type="text" name="" id=""
+                        class="bg-white w-10 h-10 border border-gray-200 dark:border-gray-700 text-center text-2xl text-black"
+                        maxlength="1">
+                </div>
+            </div>
+            <div class="flex">
+                <div class="bg-gray-300 dark:bg-strict-gray-2 p-0 h-60 border-t border-black w-[80%] flex flex-col">
+                    <div class="h-10 border-b dark:border-gray-200 border-black">
+                        <button type="button" class="w-20 pt-1 pb-1 border-t-gray-100 border-l-gray-50 border-b-gray-800 border-r-gray-800 bg-gray-350 hover:bg-gray-400 dark:border-t-gray-100 border-2 ml-1 dark:border-l-gray-375 dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 dark:bg-strict-gray-3 z-10 mt-0.5 font-mono font-semibold dark:hover:bg-strict-gray-2.5 dark:hover:border-t-white dark:hover:border-l-white dark:hover:border-b-black dark:hover:border-r-black" id="solver_open_log_btn">Log</button>
+                        <button type="button" class="w-22 pt-1 pb-1 border-t-gray-100 border-l-gray-500 border-b-gray-800 border-r-gray-800 bg-gray-350 hover:bg-gray-400 dark:border-t-gray-100 border-2 ml-1 dark:border-l-[#545454] dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 dark:bg-strict-gray-3 z-10 mt-0.5 font-mono font-semibold dark:hover:bg-strict-gray-2.5 dark:hover:border-t-white dark:hover:border-l-[#5f5f5f] dark:hover:border-b-black dark:hover:border-r-black" id="solver_open_console_btn">Console</button>
+                    </div>
+                    <div class="flex-grow font-mono p-1 pl-1.5">
+                        <div id="solver_log"></div>
+                        <div id="solver_console" class="hidden dark:text-green-500 text-green-700">
+                            <span>Sudoku Solver Console<br>Type <code>--help</code> for help</span><br><br>
+
+                            <label for="solver_console_input">$ </label>
+                            <input type="text" name="solver_console_input" id="solver_console_input" class="dark:bg-strict-gray-2 dark:text-white pl-1.5 w-[95%] focus:outline-none font-bold">
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-300 dark:bg-strict-gray-2 p-4 h-60 border-t dark:border-t-black w-[20%] border-l dark:border-gray-200">
+        
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="/scripts/dark-light-toggle.js"></script>
-    <script src="/scripts/solver-page-functionality.js" type="module"></script>
+    <script src="/scripts/solver/pg_window_settings.js" type="module"></script>
+    <script src="/scripts/solver/pg_terminal.js" type="module"></script>
 </body>
 
 </html>
