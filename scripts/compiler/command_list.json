@@ -1,0 +1,4 @@
+{
+    "pg_theme dark": "set_theme('light', 'dark')",
+    "pg_theme light": "set_theme('dark', 'light')"
+}

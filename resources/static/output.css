@@ -665,6 +665,9 @@
   .ml-11 {
     margin-left: calc(var(--spacing) * 11);
   }
+  .ml-50 {
+    margin-left: calc(var(--spacing) * 50);
+  }
   .block {
     display: block;
   }
@@ -758,11 +761,11 @@
   .w-\[80\%\] {
     width: 80%;
   }
-  .w-\[90\%\] {
-    width: 90%;
-  }
   .w-\[95\%\] {
     width: 95%;
+  }
+  .w-\[100\%\] {
+    width: 100%;
   }
   .w-full {
     width: 100%;
@@ -1094,36 +1097,6 @@
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
   }
-  .text-\[\#ff000\] {
-    color: #ff000;
-  }
-  .text-\[\#ff0000\] {
-    color: #ff0000;
-  }
-  .text-\[\$\{localStorage\.getItem\(\'\'\)\}\] {
-    color: ${localStorage.getItem('')};
-  }
-  .text-\[\$\{localStorage\.getItem\(\'solver__dark_m\'\)\}\] {
-    color: ${localStorage.getItem('solver  dark m')};
-  }
-  .text-\[\$\{localStorage\.getItem\(\'solver_log__dark_m\'\)\}\] {
-    color: ${localStorage.getItem('solver log  dark m')};
-  }
-  .text-\[\$\{localStorage\.getItem\(\'solver_log_success_color_dark_m\'\)\}\] {
-    color: ${localStorage.getItem('solver log success color dark m')};
-  }
-  .text-\[\$\{localStorage\.getItem\(\'solver_time_of_log_color_dark_m\'\)\}\] {
-    color: ${localStorage.getItem('solver time of log color dark m')};
-  }
-  .text-\[\$\{solver_time_of_log_color_dark_m\}\] {
-    color: ${solver time of log color dark m};
-  }
-  .text-\[\$\{solver\}\] {
-    color: ${solver};
-  }
-  .text-\[\$\{\}\] {
-    color: ${};
-  }
   .text-black {
     color: var(--color-black);
   }
@@ -1148,23 +1121,14 @@
   .text-gray-800 {
     color: var(--color-gray-800);
   }
-  .text-green-400 {
-    color: var(--color-green-400);
-  }
-  .text-green-500 {
-    color: var(--color-green-500);
-  }
-  .text-green-600 {
-    color: var(--color-green-600);
-  }
   .text-green-700 {
     color: var(--color-green-700);
   }
   .text-indigo-600 {
     color: var(--color-indigo-600);
   }
-  .text-purple-700 {
-    color: var(--color-purple-700);
+  .text-red-300 {
+    color: var(--color-red-300);
   }
   .text-red-700 {
     color: var(--color-red-700);
@@ -1407,6 +1371,16 @@
       outline-style: none;
     }
   }
+  .active\:w-24 {
+    &:active {
+      width: calc(var(--spacing) * 24);
+    }
+  }
+  .enabled\:w-24 {
+    &:enabled {
+      width: calc(var(--spacing) * 24);
+    }
+  }
   .md\:flex {
     @media (width >= 48rem) {
       display: flex;
@@ -1522,6 +1496,16 @@
       color: var(--color-gray-400);
     }
   }
+  .dark\:text-green-300 {
+    &:where(.dark, .dark *) {
+      color: var(--color-green-300);
+    }
+  }
+  .dark\:text-green-400 {
+    &:where(.dark, .dark *) {
+      color: var(--color-green-400);
+    }
+  }
   .dark\:text-green-500 {
     &:where(.dark, .dark *) {
       color: var(--color-green-500);
@@ -1530,6 +1514,16 @@
   .dark\:text-indigo-400 {
     &:where(.dark, .dark *) {
       color: var(--color-indigo-400);
+    }
+  }
+  .dark\:text-red-50 {
+    &:where(.dark, .dark *) {
+      color: var(--color-red-50);
+    }
+  }
+  .dark\:text-red-500 {
+    &:where(.dark, .dark *) {
+      color: var(--color-red-500);
     }
   }
   .dark\:text-white {

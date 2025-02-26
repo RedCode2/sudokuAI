@@ -7,7 +7,7 @@ var solver_time_of_log_color = document.getElementById('solver_time_of_log_color
 set_and_save_ff('bodyElement', localStorage.getItem('font-family'), 'font-family');
 set_and_save_fs('bodyElement', localStorage.getItem('font-size'), 'font-size');
 
-function set_and_save_ff(applyToElement, fontFamily, localStorageKey) {
+export function set_and_save_ff(applyToElement, fontFamily, localStorageKey) {
     let fontTranslate = {
         "sans": "Arial, sans-serif",
         "serif": "Georgia, serif",
@@ -20,7 +20,7 @@ function set_and_save_ff(applyToElement, fontFamily, localStorageKey) {
     }
 }
 
-function set_and_save_fs(fontSize, localStorageKey) {
+export function set_and_save_fs(fontSize, localStorageKey) {
     let fontSizeTranslate = {
         "small": "14px",
         "medium": "16px",
