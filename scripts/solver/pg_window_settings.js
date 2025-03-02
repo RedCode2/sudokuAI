@@ -1,3 +1,5 @@
+import { $convert_to_logmsg } from "../modules/solver_pg_terminal";
+
 const solver_window_elements_fs = document.querySelectorAll('.text-xs');
 let solver_window_settings = document.getElementById('solver_window_settings');
 let solver_window_settings_header = document.getElementById('solver_window_settings_header');
@@ -107,6 +109,15 @@ solver_window_settings_to_dark.addEventListener('click', function() {
     solver_window_theme_light_checkbox.checked = false;
 
     set_and_save_solver_theme('solver_window_theme', 'light', 'dark');
+
+    document.getElementById('solver_log').innerHTML += "<br>" + $convert_to_logmsg({
+        task: "Change theme to Dark",
+        success: true,
+        success_msg: "Success",
+        failure_msg: "Failed",
+        pg_theme: localStorage.getItem('solver_window_theme'),
+        show_time_of_log: localStorage.getItem('show_log_time')
+    })
 });
 
 solver_window_settings_to_light.addEventListener('click', function() {
@@ -114,12 +125,45 @@ solver_window_settings_to_light.addEventListener('click', function() {
     solver_window_theme_dark_checkbox.checked = false;
 
     set_and_save_solver_theme('solver_window_theme', 'dark', 'light');
+
+    document.getElementById('solver_log').innerHTML += "<br>" + $convert_to_logmsg({
+        task: "Change theme to Light",
+        success: true,
+        success_msg: "Success",
+        failure_msg: "Failed",
+        pg_theme: localStorage.getItem('solver_window_theme'),
+        show_time_of_log: localStorage.getItem('show_log_time')
+    })
 });
 
 solver_window_ff_selectbox.addEventListener('change', function() {
     set_and_save_ff('solver_window_ff', solver_window_ff_selectbox.value);
+
+    document.getElementById('solver_log').innerHTML += "<br>" + $convert_to_logmsg({
+        task: `Change font_family to ${solver_window_ff_selectbox.value}`,
+        success: true,
+        success_msg: "Success",
+        failure_msg: "Failed",
+        pg_theme: localStorage.getItem('solver_window_theme'),
+        show_time_of_log: localStorage.getItem('show_log_time')
+    })
 });
 
 solver_window_fs_selectbox.addEventListener('change', function() {
+    let fs_translate = {
+        "xs": "Small",
+        "sm": "Medium",
+        "md": "Large"
+    }
+
     set_and_save_fs('solver_window_fs', solver_window_fs_selectbox.value);
+
+    document.getElementById('solver_log').innerHTML += "<br>" + $convert_to_logmsg({
+        task: `Change font_size to ${fs_translate[solver_window_fs_selectbox.value]}`,
+        success: true,
+        success_msg: "Success",
+        failure_msg: "Failed",
+        pg_theme: localStorage.getItem('solver_window_theme'),
+        show_time_of_log: localStorage.getItem('show_log_time')
+    })
 });

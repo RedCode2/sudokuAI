@@ -12,7 +12,7 @@
 
 <body id="bodyElement" class="flex flex-col h-screen">
     <div class="flex flex-grow bg-white dark:bg-strict-gray dark:text-white">
-        <aside class="w-84 bg-gray-100 dark:bg-strict-gray dark:text-white dark:border-gray-200 border-black border-r-1">
+        <aside class="w-110 max-w-[20%] bg-gray-100 dark:bg-strict-gray dark:text-white dark:border-gray-200 border-black border-r-1">
             <h2 class="mb-1 bg-light-gray-3 text-gray-700 dark:text-gray-200 dark:bg-strict-gray-2 font-bold dark:hover:bg-strict-gray-3"
                 id="solver_window_settings_header">
                 <img src="/resources/assets/downward-arrow_dark_m.png" alt="arrow"
@@ -58,7 +58,7 @@
                     <select name="solver_window_font_size" id="solver_window_fs_selectbox"
                         class="bg-light-gray-3 dark:bg-strict-gray-3 dark:text-white pl-1 ml-4 w-56 hover:bg-light-gray-4 dark:hover:bg-strict-gray-4">
                         <option value="xs" class="" id="solver_window_fs_selectbox_change_to_font_size_small">
-                            Small</option>
+                            Small (Recommended)</option>
                         <option value="sm" class=""
                             id="solver_window_fs_selectbox_change_to_font_size_medium">Medium</option>
                         <option value="md" class="" id="solver_window_fs_selectbox_change_to_font_size_large">
@@ -68,32 +68,182 @@
             </div>
         </aside>
         <div class="flex-grow flex flex-col">
-            <div class="flex-grow bg-gray-100 dark:bg-strict-gray">
-                <div class="m-20">
-                    <input type="text" name="" id=""
-                        class="bg-white w-10 h-10 border border-gray-200 dark:border-gray-700 text-center text-2xl text-black"
-                        maxlength="1">
+            <div class="flex-grow bg-gray-100 dark:bg-strict-gray overflow-y-scroll overflow-x-scroll">
+                <div class="m-20 p-3 bg-white w-[50%] ml-[25%]">
+                    <div class="solver_column_header text-black text-xl space-x-7 -ml-2 justify-center flex flex-wrap sudoku_board_headers">
+                        <span>A</span>
+                        <span>B</span>
+                        <span style="transform: translateX(4px)">C</span>
+                        <span style="transform: translateX(10px)">D</span>
+                        <span style="transform: translateX(12px)">E</span>
+                        <span style="transform: translateX(16px)">F</span>
+                        <span style="transform: translateX(20px)">G</span>
+                        <span style="transform: translateX(24px)">H</span>
+                        <span style="transform: translateX(30px)">I</span>
+                    </div>
+                    <div class="justify-center flex">
+                        <div class="flex">
+                            <label class="text-black text-xl m-2 sudoku_board_headers">1</label>
+                            <input 
+                                type="text" 
+                                name="sudoku_board" 
+                                id="cell_A1"
+                                class="bg-white w-13 h-12 border border-gray-700 border-t-2 border-l-2 border-l-strict-gray-5 border-t-strict-gray-5 text-center text-2xl text-black -mr-1.5"
+                                maxlength="1"
+                            />
+                            <input 
+                                type="text" 
+                                name="sudoku_board" 
+                                id="cell_B1"
+                                class="bg-white w-13 h-12 border border-gray-700 border-t-2 border-t-strict-gray-5 text-center text-2xl text-black -mr-2"
+                                maxlength="1"
+                            />
+                            <input 
+                                type="text" 
+                                name="sudoku_board" 
+                                id="cell_C1"
+                                class="bg-white w-12 h-12 border border-gray-700 border-t-2 border-r-2 border-r-strict-gray-5 border-t-strict-gray-5 text-center text-2xl text-black -mr-1.5"
+                                maxlength="1"
+                            />
+                            <input 
+                                type="text" 
+                                name="sudoku_board" 
+                                id="cell_D1"
+                                class="bg-white w-13 h-12 border border-gray-700 border-t-2 border-t-strict-gray-5 text-center text-2xl text-black -mr-2 ml-1"
+                                maxlength="1"
+                            />
+                            <input 
+                                type="text" 
+                                name="sudoku_board" 
+                                id="cell_E1"
+                                class="bg-white w-13 h-12 border border-gray-700 border-t-2 border-t-strict-gray-5 text-center text-2xl text-black -mr-2"
+                                maxlength="1"
+                            />
+                            <input 
+                                type="text" 
+                                name="sudoku_board" 
+                                id="cell_F1"
+                                class="bg-white w-12 h-12 border border-gray-700 border-t-2 border-r-2 border-r-strict-gray-5 border-t-strict-gray-5 text-center text-2xl text-black -mr-1.5"
+                                maxlength="1"
+                            />
+                            <input 
+                                type="text" 
+                                name="sudoku_board" 
+                                id="cell_G1"
+                                class="bg-white w-13 h-12 border border-gray-700 border-t-2 border-t-strict-gray-5 text-center text-2xl text-black -mr-2 ml-1"
+                                maxlength="1"
+                            />
+                            <input 
+                                type="text" 
+                                name="sudoku_board" 
+                                id="cell_H1"
+                                class="bg-white w-13 h-12 border border-gray-700 border-t-2 border-t-strict-gray-5 text-center text-2xl text-black -mr-2"
+                                maxlength="1"
+                            />
+                            <input 
+                                type="text" 
+                                name="sudoku_board" 
+                                id="cell_I1"
+                                class="bg-white w-12 h-12 border border-gray-700 border-t-2 border-r-2 border-r-strict-gray-5 border-t-strict-gray-5 text-center text-2xl text-black -mr-1.5"
+                                maxlength="1"
+                            />
+                        </div>
+                        <div class="flex">
+                            <label class="text-black text-xl m-2 sudoku_board_headers">2</label>
+                        <input 
+                            type="text" 
+                            name="sudoku_board" 
+                            id="cell_A2"
+                            class="bg-white w-13 h-12 border border-gray-700 border-t-2 border-l-2 border-l-strict-gray-5 border-t-strict-gray-5 text-center text-2xl text-black -mr-1.5"
+                            maxlength="1"
+                        />
+                        <input 
+                            type="text" 
+                            name="sudoku_board" 
+                            id="cell_B2"
+                            class="bg-white w-13 h-12 border border-gray-700 border-t-2 border-t-strict-gray-5 text-center text-2xl text-black -mr-2"
+                            maxlength="1"
+                        />
+                        <input 
+                            type="text" 
+                            name="sudoku_board" 
+                            id="cell_C2"
+                            class="bg-white w-12 h-12 border border-gray-700 border-t-2 border-r-2 border-r-strict-gray-5 border-t-strict-gray-5 text-center text-2xl text-black -mr-1.5"
+                            maxlength="1"
+                        />
+                        <input 
+                            type="text" 
+                            name="sudoku_board" 
+                            id="cell_D2"
+                            class="bg-white w-13 h-12 border border-gray-700 border-t-2 border-t-strict-gray-5 text-center text-2xl text-black -mr-2 ml-1"
+                            maxlength="1"
+                        />
+                        <input 
+                            type="text" 
+                            name="sudoku_board" 
+                            id="cell_E2"
+                            class="bg-white w-13 h-12 border border-gray-700 border-t-2 border-t-strict-gray-5 text-center text-2xl text-black -mr-2"
+                            maxlength="1"
+                        />
+                        <input 
+                            type="text" 
+                            name="sudoku_board" 
+                            id="cell_F2"
+                            class="bg-white w-12 h-12 border border-gray-700 border-t-2 border-r-2 border-r-strict-gray-5 border-t-strict-gray-5 text-center text-2xl text-black -mr-1.5"
+                            maxlength="1"
+                        />
+                        <input 
+                            type="text" 
+                            name="sudoku_board" 
+                            id="cell_G2"
+                            class="bg-white w-13 h-12 border border-gray-700 border-t-2 border-t-strict-gray-5 text-center text-2xl text-black -mr-2 ml-1"
+                            maxlength="1"
+                        />
+                        <input 
+                            type="text" 
+                            name="sudoku_board" 
+                            id="cell_H2"
+                            class="bg-white w-13 h-12 border border-gray-700 border-t-2 border-t-strict-gray-5 text-center text-2xl text-black -mr-2"
+                            maxlength="1"
+                        />
+                        <input 
+                            type="text" 
+                            name="sudoku_board" 
+                            id="cell_I2"
+                            class="bg-white w-12 h-12 border border-gray-700 border-t-2 border-r-2 border-r-strict-gray-5 border-t-strict-gray-5 text-center text-2xl text-black -mr-1.5"
+                            maxlength="1"
+                        />
+                        </div>
+                        
+                    </div>
                 </div>
             </div>
             <div class="flex">
-                <div class="bg-gray-300 dark:bg-strict-gray-2 p-0 h-60 border-t border-black w-[80%] flex flex-col">
+                <div class="bg-gray-200 dark:bg-strict-gray-2 p-0 h-60 border-t border-black w-[77%] flex flex-col">
                     <div class="h-10 border-b dark:border-gray-200 border-black">
                         <button type="button" class="w-20 pt-1 pb-1 border-t-gray-100 border-l-gray-50 border-b-gray-800 border-r-gray-800 bg-gray-350 hover:bg-gray-400 dark:border-t-gray-100 border-2 ml-1 dark:border-l-gray-375 dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 dark:bg-strict-gray-3 z-10 mt-0.5 font-mono font-semibold dark:hover:bg-strict-gray-2.5 dark:hover:border-t-white dark:hover:border-l-white dark:hover:border-b-black dark:hover:border-r-black" id="solver_open_log_btn">Log</button>
                         <button type="button" class="w-22 pt-1 pb-1 border-t-gray-100 border-l-gray-500 border-b-gray-800 border-r-gray-800 bg-gray-350 hover:bg-gray-400 dark:border-t-gray-100 border-2 ml-1 dark:border-l-[#545454] dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 dark:bg-strict-gray-3 z-10 mt-0.5 font-mono font-semibold dark:hover:bg-strict-gray-2.5 dark:hover:border-t-white dark:hover:border-l-[#5f5f5f] dark:hover:border-b-black dark:hover:border-r-black" id="solver_open_console_btn">Console</button>
                         <span id="solver_terminal_open_window" class="ml-50 font-mono text-lg"></span>
                     </div>
                     <div class="flex-grow font-mono p-1 pl-1.5">
-                        <div id="solver_log"></div>
-                        <div id="solver_console" class="hidden dark:text-green-500 text-green-700">
+                        <div id="solver_log" class="h-48 font-mono p-1 pl-1.5 max-h-48 overflow-y-scroll"></div>
+                        <div id="solver_console" class="hidden dark:text-green-500 text-green-700 font-mono p-1 pl-1.5 h-48 overflow-y-scroll max-h-48">
                             <span>Sudoku Solver Console<br>Type <code>--help</code> for help</span><br><br>
-
-                            <label for="solver_console_input">$ </label>
-                            <input type="text" name="solver_console_input" id="solver_console_input" class="dark:bg-strict-gray-2 dark:text-white pl-1.5 w-[95%] focus:outline-none font-bold">
+                            <label for="solver_console_input_0">$ </label>
+                            <input type="text" name="solver_console_input_0" id="solver_console_input_0"
+                                class="dark:bg-strict-gray-2 dark:text-white pl-1.5 w-[95%] focus:outline-none font-bold">
+                            <span id="solver_console_output_0"></span>
                         </div>
                     </div>
+                    
                 </div>
-                <div class="bg-gray-300 dark:bg-strict-gray-2 p-4 h-60 border-t dark:border-t-black w-[20%] border-l dark:border-gray-200">
-        
+                <div class="bg-gray-300 dark:bg-strict-gray-2 p-4 h-60 border-t dark:border-t-black w-[23%] border-l dark:border-gray-200 overflow-y-scroll">
+                    <button type="button" class="p-2 pl-3 pr-3 bg-gray-400 dark:bg-strict-gray-3 hover:bg-gray-500 dark:hover:bg-strict-gray-4 dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 border-1" id="solver_solve_sudoku_btn">Solve Sudoku</button>
+                    <button type="button" class="p-2 pl-3 pr-3 bg-gray-400 dark:bg-strict-gray-3 hover:bg-gray-500 dark:hover:bg-strict-gray-4 dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 border-1 ml-2" id="solver_solve_cell_btn">Solve Cell</button>
+                    <button type="button" class="p-2 pl-3 pr-3 bg-gray-400 dark:bg-strict-gray-3 hover:bg-gray-500 dark:hover:bg-strict-gray-4 dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 border-1 mt-2" id="solver_solve_column_btn">Solve Column</button>
+                    <button type="button" class="p-2 pl-3 pr-3 bg-gray-400 dark:bg-strict-gray-3 hover:bg-gray-500 dark:hover:bg-strict-gray-4 dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 border-1 ml-2" id="solver_solve_row_btn">Solve Row</button>
+                    <button type="button" class="p-2 pl-3 pr-3 bg-gray-400 dark:bg-strict-gray-3 hover:bg-gray-500 dark:hover:bg-strict-gray-4 dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 border-1 mt-2" id="solver_open_console_window_btn">Open Console Window</button>
+                    <button type="button" class="p-2 pl-3 pr-3 bg-gray-400 dark:bg-strict-gray-3 hover:bg-gray-500 dark:hover:bg-strict-gray-4 dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 border-1 mt-2" id="solver_open_log_window_btn">Open Log Window</button>
                 </div>
             </div>
         </div>
@@ -102,6 +252,7 @@
     <script src="/scripts/dark-light-toggle.js"></script>
     <script src="/scripts/solver/pg_window_settings.js" type="module"></script>
     <script src="/scripts/solver/pg_terminal.js" type="module"></script>
+    <script src="/scripts/solver-page-routing.js" type="module"></script>
 </body>
 
 </html>

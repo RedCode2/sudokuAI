@@ -18,12 +18,14 @@ export function $exec_func(actionIdentifier) {
     }
 }
 
-window.set_theme = function(fromTheme, toTheme) {
-    document.documentElement.classList.remove(fromTheme);
-    document.documentElement.classList.add(toTheme);
-  
-    console.log(`Setting theme ${toTheme}`);
+window.set_ff = function(font_family) {
+    document.documentElement.classList.remove(`font-mono`, `font-sans`, `font-serif`);
+    document.documentElement.classList.add(`font-${font_family}`);
 };
+window.set_fs = function(font_size) {
+    document.documentElement.classList.remove(`text-sm`, `text-xs`, `text-lg`);
+    document.documentElement.classList.add(`text-${font_size}`);
+}
 
 // Example of dynamically adding an action (if needed):
 // validatedActionRegistry["pg_theme light"] = "set_theme('dark', 'light')";
