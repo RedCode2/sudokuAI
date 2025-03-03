@@ -20,3 +20,7 @@
     --color-light-gray-3: #d5d5d5;
     --color-light-gray-4: #c0c0c0;
 }
+
+.sudoku-cell {
+    @apply bg-white w-12 h-12 border border-gray-700 text-center text-2xl text-black;
+}
