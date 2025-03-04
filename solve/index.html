@@ -12,7 +12,7 @@
 
 <body id="bodyElement" class="flex flex-col h-screen">
     <div class="flex flex-grow bg-white dark:bg-strict-gray dark:text-white">
-        <aside class="w-110 max-w-[20%] bg-gray-100 dark:bg-strict-gray dark:text-white dark:border-gray-200 border-black border-r-1">
+        <aside class="w-125 max-w-[24%] bg-gray-100 dark:bg-strict-gray dark:text-white dark:border-gray-200 border-black border-r-1">
             <h2 class="mb-1 bg-light-gray-3 text-gray-700 dark:text-gray-200 dark:bg-strict-gray-2 font-bold dark:hover:bg-strict-gray-3"
                 id="solver_window_settings_header">
                 <img src="/resources/assets/downward-arrow_dark_m.png" alt="arrow"
@@ -69,7 +69,7 @@
         </aside>
         <div class="flex-grow flex flex-col">
             <div class="flex-grow bg-gray-100 dark:bg-strict-gray overflow-y-scroll overflow-x-scroll">
-                <div class="m-20 p-3 bg-white w-[50%] ml-[25%]">
+                <div class="mr-20 mt-2 p-3 bg-white w-[50%] ml-[25%]">
                     <div class="text-black text-xl space-x-[4.2%] -ml-2 justify-center flex flex-wrap sudoku_board_headers">
                         <span>A</span>
                         <span>B</span>
@@ -676,11 +676,12 @@
                                 maxlength="1"
                             />
                         </div>
+                        <br><br> 
                     </div>
                 </div>
             </div>
             <div class="flex">
-                <div class="bg-gray-200 dark:bg-strict-gray-2 p-0 h-60 border-t border-black w-[77%] flex flex-col">
+                <div class="bg-gray-200 dark:bg-strict-gray-2 p-0 h-60 border-t border-black w-[76%] flex flex-col">
                     <div class="h-10 border-b dark:border-gray-200 border-black">
                         <button type="button" class="w-20 pt-1 pb-1 border-t-gray-100 border-l-gray-50 border-b-gray-800 border-r-gray-800 bg-gray-350 hover:bg-gray-400 dark:border-t-gray-100 border-2 ml-1 dark:border-l-gray-375 dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 dark:bg-strict-gray-3 z-10 mt-0.5 font-mono font-semibold dark:hover:bg-strict-gray-2.5 dark:hover:border-t-white dark:hover:border-l-white dark:hover:border-b-black dark:hover:border-r-black" id="solver_open_log_btn">Log</button>
                         <button type="button" class="w-22 pt-1 pb-1 border-t-gray-100 border-l-gray-500 border-b-gray-800 border-r-gray-800 bg-gray-350 hover:bg-gray-400 dark:border-t-gray-100 border-2 ml-1 dark:border-l-[#545454] dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 dark:bg-strict-gray-3 z-10 mt-0.5 font-mono font-semibold dark:hover:bg-strict-gray-2.5 dark:hover:border-t-white dark:hover:border-l-[#5f5f5f] dark:hover:border-b-black dark:hover:border-r-black" id="solver_open_console_btn">Console</button>
@@ -698,11 +699,13 @@
                     </div>
                     
                 </div>
-                <div class="bg-gray-300 dark:bg-strict-gray-2 p-4 h-60 border-t dark:border-t-black w-[23%] border-l dark:border-gray-200 overflow-y-scroll">
+                <div class="bg-gray-300 dark:bg-strict-gray-2 p-4 h-60 border-t dark:border-t-black w-[24%] border-l dark:border-gray-200 overflow-y-scroll">
                     <button type="button" class="p-2 pl-3 pr-3 bg-gray-400 dark:bg-strict-gray-3 hover:bg-gray-500 dark:hover:bg-strict-gray-4 dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 border-1" id="solver_solve_sudoku_btn">Solve Sudoku</button>
                     <button type="button" class="p-2 pl-3 pr-3 bg-gray-400 dark:bg-strict-gray-3 hover:bg-gray-500 dark:hover:bg-strict-gray-4 dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 border-1 ml-2" id="solver_solve_cell_btn">Solve Cell</button>
                     <button type="button" class="p-2 pl-3 pr-3 bg-gray-400 dark:bg-strict-gray-3 hover:bg-gray-500 dark:hover:bg-strict-gray-4 dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 border-1 mt-2" id="solver_solve_column_btn">Solve Column</button>
                     <button type="button" class="p-2 pl-3 pr-3 bg-gray-400 dark:bg-strict-gray-3 hover:bg-gray-500 dark:hover:bg-strict-gray-4 dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 border-1 ml-2" id="solver_solve_row_btn">Solve Row</button>
+                    <button type="button" class="p-2 pl-3 pr-3 bg-gray-400 dark:bg-strict-gray-3 hover:bg-gray-500 dark:hover:bg-strict-gray-4 dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 border-1 mt-2" id="solver_clear_sudoku_btn">Clear Sudoku</button>
+                    <button type="button" class="p-2 pl-3 pr-3 bg-gray-400 dark:bg-strict-gray-3 hover:bg-gray-500 dark:hover:bg-strict-gray-4 dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 border-1 ml-2" id="solver_clear_cell_btn">Clear Cell</button>
                     <button type="button" class="p-2 pl-3 pr-3 bg-gray-400 dark:bg-strict-gray-3 hover:bg-gray-500 dark:hover:bg-strict-gray-4 dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 border-1 mt-2" id="solver_open_console_window_btn">Open Console Window</button>
                     <button type="button" class="p-2 pl-3 pr-3 bg-gray-400 dark:bg-strict-gray-3 hover:bg-gray-500 dark:hover:bg-strict-gray-4 dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 border-1 mt-2" id="solver_open_log_window_btn">Open Log Window</button>
                 </div>
