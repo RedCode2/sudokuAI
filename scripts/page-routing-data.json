@@ -3,6 +3,5 @@
     "solve": "/solve/index.html",
     "generate": "/generate/index.html",
     "settings": "/settings/index.html",
-    "solver_console": "/solve/console/index.html",
     "solver_log": "/solve/log/index.html"
 }

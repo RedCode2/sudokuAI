@@ -12,7 +12,7 @@
 
 <body id="bodyElement" class="flex flex-col h-screen">
     <div class="flex flex-grow bg-white dark:bg-strict-gray dark:text-white">
-        <aside class="w-125 max-w-[24%] bg-gray-100 dark:bg-strict-gray dark:text-white dark:border-gray-200 border-black border-r-1">
+        <aside class="w-120 max-w-[24%] bg-gray-100 dark:bg-strict-gray dark:text-white dark:border-gray-200 border-black border-r-1">
             <h2 class="mb-1 bg-light-gray-3 text-gray-700 dark:text-gray-200 dark:bg-strict-gray-2 font-bold dark:hover:bg-strict-gray-3"
                 id="solver_window_settings_header">
                 <img src="/resources/assets/downward-arrow_dark_m.png" alt="arrow"
@@ -66,622 +66,215 @@
                     </select>
                 </div>
             </div>
+
+            <h2 class="mb-1 bg-light-gray-3 text-gray-700 dark:text-gray-200 dark:bg-strict-gray-2 font-bold dark:hover:bg-strict-gray-3 mt-2" id="solver_sudoku_board_settings_header">
+                <img src="/resources/assets/downward-arrow_dark_m.png" alt="arrow" class="w-4 mb-0.5 mr-0.5 hidden dark:inline-flex" id="solver_sudoku_board_settings_arrow">
+                <img src="/resources/assets/downward-arrow_light_m.png" alt="arrow" class="inline-flex w-4 mb-0.5 mr-0.5 dark:hidden" id="solver_sudoku_board_settings_arrow_light_m">
+                Sudoku Board Settings
+            </h2>
+
+            <div id="solver_sudoku_board_settings">
+                <div id="solver_differentiate_computed_user_values"
+                    class="hover:bg-gray-300 dark:hover:bg-strict-gray-2 pl-3 flex items-center">
+                    <input 
+                        type="checkbox" 
+                        name="solver_differentiate_computed_user_values" 
+                        id="solver_differentiate_computed_user_values_checkbox"
+                        class="peer sr-only" 
+                        checked
+                    >
+                    <div
+                        class="w-3.5 h-3.5 border border-black peer-checked:bg-blue-600 dark:peer-checked:bg-gray-300 peer-checked:border-black peer-checked:border-1 peer-checked:bg-clip-content rounded-sm inline-flex bg-gray-400 dark:bg-strict-gray-3 dark:border-black">
+                    </div>
+                    <label for="solver_differentiate_computed_user_values_checkbox" class="ml-1">Differentiate Computed and User Values</label>
+                </div>
+
+                <div id="solver_show_headers"
+                    class="hover:bg-gray-300 dark:hover:bg-strict-gray-2 pl-3 flex items-center">
+                    <input 
+                        type="checkbox" 
+                        name="solver_show_headers" 
+                        id="solver_show_headers_checkbox"
+                        class="peer sr-only" 
+                        checked
+                    >
+                    <div
+                        class="w-3.5 h-3.5 border border-black peer-checked:bg-blue-600 dark:peer-checked:bg-gray-300 peer-checked:border-black peer-checked:border-1 peer-checked:bg-clip-content rounded-sm inline-flex bg-gray-400 dark:bg-strict-gray-3 dark:border-black">
+                    </div>
+                    <label for="solver_show_headers_checkbox" class="ml-1">Show Headers</label>
+                </div>
+
+                <div id="solver_sudoku_board_background_color"
+                    class="hover:bg-gray-300 dark:hover:bg-strict-gray-2 pl-3 flex items-center">
+            
+                    <label for="solver_sudoku_board_background_color_input" class="ml-1">Background Color: </label>
+                    <input 
+                        type="color" 
+                        name="solver_sudoku_board_background_color" 
+                        id="solver_sudoku_board_background_color_input"
+                        class="w-15 h-6 ml-7.5 mt-2" value="#FFFFFF"
+                    >
+            
+                </div>
+
+                <div id="solver_sudoku_board_border_color"
+                    class="hover:bg-gray-300 dark:hover:bg-strict-gray-2 pl-3 flex items-center">
+            
+                    <label for="solver_sudoku_board_border_color_input" class="ml-1">Border Color: </label>
+                    <input 
+                        type="color" 
+                        name="solver_sudoku_board_border_color" 
+                        id="solver_sudoku_board_border_color_input"
+                        class="w-15 h-6 ml-17 mt-2" value="#000"
+                    >
+            
+                </div>
+
+                <div id="solver_sudoku_board_computed_text_color"
+                    class="hover:bg-gray-300 dark:hover:bg-strict-gray-2 pl-3 flex items-center">
+            
+                    <label for="solver_sudoku_board_computed_text_color_input" class="ml-1">Computed Text Color: </label>
+                    <input 
+                        type="color" 
+                        name="solver_sudoku_board_computed_text_color" 
+                        id="solver_sudoku_board_computed_text_color_input"
+                        class="w-15 h-6 ml-2 mt-2" value="#0000FF"
+                    >
+            
+                </div>
+            </div>
         </aside>
         <div class="flex-grow flex flex-col">
             <div class="flex-grow bg-gray-100 dark:bg-strict-gray overflow-y-scroll overflow-x-scroll">
                 <div class="mr-20 mt-2 p-3 bg-white w-[50%] ml-[25%]">
-                    <div class="text-black text-xl space-x-[4.2%] -ml-2 justify-center flex flex-wrap sudoku_board_headers">
+                    <div class="text-black text-xl space-x-[27px] -ml-2 justify-center flex flex-wrap sudoku_board_headers">
                         <span>A</span>
                         <span>B</span>
-                        <span style="transform: translateX(4px)">C</span>
-                        <span style="transform: translateX(10px)">D</span>
-                        <span style="transform: translateX(12px)">E</span>
-                        <span style="transform: translateX(16px)">F</span>
-                        <span style="transform: translateX(20px)">G</span>
-                        <span style="transform: translateX(24px)">H</span>
-                        <span style="transform: translateX(30px)">I</span>
+                        <span>C</span>
+                        <span>D</span>
+                        <span>E</span>
+                        <span>F</span>
+                        <span>G</span>
+                        <span>H</span>
+                        <span>I</span>
                     </div>
-                    <div class="bg-white w-[50%] ml-[17%]">
-                        <div class="flex">
-                            <label class="text-black text-xl m-2 sudoku_board_headers">1</label>
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_A1"
-                                class="bg-white w-13 h-12 border border-gray-700 border-t-2 border-l-2 border-l-strict-gray-5 border-t-strict-gray-5 text-center text-2xl text-black -mr-1.5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_B1"
-                                class="bg-white w-13 h-12 border border-gray-700 border-t-2 border-t-strict-gray-5 text-center text-2xl text-black -mr-2"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_C1"
-                                class="bg-white w-12 h-12 border border-gray-700 border-t-2 border-r-2 border-r-strict-gray-5 border-t-strict-gray-5 text-center text-2xl text-black -mr-1.5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_D1"
-                                class="bg-white w-13 h-12 border border-gray-700 border-t-2 border-t-strict-gray-5 text-center text-2xl text-black -mr-2 ml-1"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_E1"
-                                class="bg-white w-13 h-12 border border-gray-700 border-t-2 border-t-strict-gray-5 text-center text-2xl text-black -mr-2"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_F1"
-                                class="bg-white w-12 h-12 border border-gray-700 border-t-2 border-r-2 border-r-strict-gray-5 border-t-strict-gray-5 text-center text-2xl text-black -mr-[4px]"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_G1"
-                                class="bg-white w-13 h-12 border border-gray-700 border-t-2 border-t-strict-gray-5 text-center text-2xl text-black -mr-2 ml-1"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_H1"
-                                class="bg-white w-13 h-12 border border-gray-700 border-t-2 border-t-strict-gray-5 text-center text-2xl text-black -mr-2"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_I1"
-                                class="bg-white w-12 h-12 border border-gray-700 border-t-2 border-r-2 border-r-strict-gray-5 border-t-strict-gray-5 text-center text-2xl text-black -mr-1.5"
-                                maxlength="1"
-                            />
+                    <div class="flex justify-center items-center text-black text-xl -ml-15">
+                        <div class="grid grid-cols-10 gap-0 space-x-0 space-y-0 p-1 text-black">
+
+                            <!-- Row A -->
+                            <div class="row-start-1 row-end-2 flex items-center justify-center text-2xl font-normal sudoku_board_headers">1</div>
+                            <input id="cell_A1" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-t-2 border-l-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_A2" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-t-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_A3" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-t-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_A4" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-t-2 border-l-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_A5" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-t-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_A6" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-t-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_A7" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-t-2 border-l-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_A8" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-t-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_A9" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-t-2 border-r-2 focus:outline-none focus:border-blue-500">
+                    
+                            <!-- Row B -->
+                            <div class="row-start-2 row-end-3 flex items-center justify-center text-2xl font-normal sudoku_board_headers">2</div>
+                            <input id="cell_B1" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-l-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_B2" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black focus:outline-none focus:border-blue-500">
+                            <input id="cell_B3" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black focus:outline-none focus:border-blue-500">
+                            <input id="cell_B4" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-l-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_B5" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black focus:outline-none focus:border-blue-500">
+                            <input id="cell_B6" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black focus:outline-none focus:border-blue-500">
+                            <input id="cell_B7" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-l-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_B8" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black focus:outline-none focus:border-blue-500">
+                            <input id="cell_B9" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-r-2 focus:outline-none focus:border-blue-500">
+                    
+                            <!-- Row C -->
+                            <div class="row-start-3 row-end-4 flex items-center justify-center text-2xl font-normal sudoku_board_headers">3</div>
+                            <input id="cell_C1" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-l-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_C2" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black focus:outline-none focus:border-blue-500">
+                            <input id="cell_C3" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black focus:outline-none focus:border-blue-500">
+                            <input id="cell_C4" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-l-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_C5" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black focus:outline-none focus:border-blue-500">
+                            <input id="cell_C6" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black focus:outline-none focus:border-blue-500">
+                            <input id="cell_C7" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-l-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_C8" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black focus:outline-none focus:border-blue-500">
+                            <input id="cell_C9" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-r-2 focus:outline-none focus:border-blue-500">
+                    
+                            <!-- Row D -->
+                            <div class="row-start-4 row-end-5 flex items-center justify-center text-2xl font-normal sudoku_board_headers">4</div>
+                            <input id="cell_D1" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-t-2 border-l-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_D2" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-t-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_D3" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-t-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_D4" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-t-2 border-l-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_D5" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-t-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_D6" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-t-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_D7" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-t-2 border-l-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_D8" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-t-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_D9" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-t-2 border-r-2 focus:outline-none focus:border-blue-500">
+                    
+                            <!-- Row E -->
+                            <div class="row-start-5 row-end-6 flex items-center justify-center text-2xl font-normal sudoku_board_headers">5</div>
+                            <input id="cell_E1" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-l-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_E2" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black focus:outline-none focus:border-blue-500">
+                            <input id="cell_E3" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black focus:outline-none focus:border-blue-500">
+                            <input id="cell_E4" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-l-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_E5" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black focus:outline-none focus:border-blue-500">
+                            <input id="cell_E6" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black focus:outline-none focus:border-blue-500">
+                            <input id="cell_E7" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-l-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_E8" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black focus:outline-none focus:border-blue-500">
+                            <input id="cell_E9" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-r-2 focus:outline-none focus:border-blue-500">
+                    
+                            <!-- Row F -->
+                            <div class="row-start-6 row-end-7 flex items-center justify-center text-2xl font-normal sudoku_board_headers">6</div>
+                            <input id="cell_F1" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-l-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_F2" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black focus:outline-none focus:border-blue-500">
+                            <input id="cell_F3" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black focus:outline-none focus:border-blue-500">
+                            <input id="cell_F4" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-l-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_F5" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black focus:outline-none focus:border-blue-500">
+                            <input id="cell_F6" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black focus:outline-none focus:border-blue-500">
+                            <input id="cell_F7" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-l-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_F8" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black focus:outline-none focus:border-blue-500">
+                            <input id="cell_F9" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-r-2 focus:outline-none focus:border-blue-500">
+                    
+                            <!-- Row G -->
+                            <div class="row-start-7 row-end-8 flex items-center justify-center text-2xl font-normal sudoku_board_headers">7</div>
+                            <input id="cell_G1" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-t-2 border-l-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_G2" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-t-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_G3" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-t-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_G4" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-t-2 border-l-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_G5" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-t-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_G6" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-t-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_G7" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-t-2 border-l-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_G8" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-t-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_G9" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-t-2 border-r-2 focus:outline-none focus:border-blue-500">
+                    
+                            <!-- Row H -->
+                            <div class="row-start-8 row-end-9 flex items-center justify-center text-2xl font-normal sudoku_board_headers">8</div>
+                            <input id="cell_H1" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-l-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_H2" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black focus:outline-none focus:border-blue-500">
+                            <input id="cell_H3" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black focus:outline-none focus:border-blue-500">
+                            <input id="cell_H4" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-l-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_H5" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black focus:outline-none focus:border-blue-500">
+                            <input id="cell_H6" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black focus:outline-none focus:border-blue-500">
+                            <input id="cell_H7" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-l-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_H8" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black focus:outline-none focus:border-blue-500">
+                            <input id="cell_H9" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-r-2 focus:outline-none focus:border-blue-500">
+                    
+                            <!-- Row I -->
+                            <div class="row-start-9 row-end-10 flex items-center justify-center text-2xl font-normal sudoku_board_headers">9</div>
+                            <input id="cell_I1" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-b-2 border-l-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_I2" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-b-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_I3" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-b-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_I4" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-b-2 border-l-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_I5" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-b-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_I6" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-b-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_I7" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-b-2 border-l-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_I8" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-b-2 focus:outline-none focus:border-blue-500">
+                            <input id="cell_I9" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-b-2 border-r-2 focus:outline-none focus:border-blue-500">
                         </div>
-                        <div class="flex -mt-1">
-                            <label class="text-black text-xl m-2 sudoku_board_headers">2</label>
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_A2"
-                                class="bg-white w-13 h-12 border border-gray-700 border-l-2 border-l-strict-gray-5 text-center text-2xl text-black -mr-1.5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_B2"
-                                class="bg-white w-13 h-12 border border-gray-700  text-center text-2xl text-black -mr-2"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_C2"
-                                class="bg-white w-12 h-12 border border-gray-700 border-r-2 border-r-strict-gray-5 text-center text-2xl text-black -mr-1.5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_D2"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2 ml-1"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_E2"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_F2"
-                                class="bg-white w-12 h-12 border border-gray-700 border-r-2 border-r-strict-gray-5 text-center text-2xl text-black -mr-[4px]"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_G2"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2 ml-1"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_H2"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_I2"
-                                class="bg-white w-12 h-12 border border-gray-700 border-r-2 border-r-strict-gray-5 text-center text-2xl text-black -mr-1.5"
-                                maxlength="1"
-                            />
-                        </div>
-                        <div class="flex -mt-1">
-                            <label class="text-black text-xl m-2 sudoku_board_headers">3</label>
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_A3"
-                                class="bg-white w-13 h-12 border border-gray-700 border-l-2 border-l-strict-gray-5 border-b-2 border-b-strict-gray-5 text-center text-2xl text-black -mr-1.5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_B3"
-                                class="bg-white w-13 h-12 border border-gray-700  text-center text-2xl text-black -mr-2 border-b-2 border-b-strict-gray-5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_C3"
-                                class="bg-white w-12 h-12 border border-gray-700 border-r-2 border-r-strict-gray-5 text-center text-2xl text-black -mr-1.5 border-b-2 border-b-strict-gray-5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_D3"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2 ml-1 border-b-2 border-b-strict-gray-5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_E3"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2 border-b-2 border-b-strict-gray-5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_F3"
-                                class="bg-white w-12 h-12 border border-gray-700 border-r-2 border-r-strict-gray-5 text-center text-2xl text-black -mr-[4px] border-b-2 border-b-strict-gray-5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_G3"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2 ml-1 border-b-2 border-b-strict-gray-5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_H3"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2 border-b-2 border-b-strict-gray-5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_I3"
-                                class="bg-white w-12 h-12 border border-gray-700 border-r-2 border-r-strict-gray-5 text-center text-2xl text-black -mr-1.5 border-b-2 border-b-strict-gray-5"
-                                maxlength="1"
-                            />
-                        </div>
-                        <div class="flex -mt-0.5">
-                            <label class="text-black text-xl m-2 sudoku_board_headers">4</label>
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_A4"
-                                class="bg-white w-13 h-12 border border-gray-700 border-l-2 border-l-strict-gray-5 text-center text-2xl text-black -mr-1.5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_B4"
-                                class="bg-white w-13 h-12 border border-gray-700  text-center text-2xl text-black -mr-2"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_C4"
-                                class="bg-white w-12 h-12 border border-gray-700 border-r-2 border-r-strict-gray-5 text-center text-2xl text-black -mr-1.5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_D4"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2 ml-1"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_E4"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_F4"
-                                class="bg-white w-12 h-12 border border-gray-700 border-r-2 border-r-strict-gray-5 text-center text-2xl text-black -mr-[4px]"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_G4"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2 ml-1"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_H4"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_I4"
-                                class="bg-white w-12 h-12 border border-gray-700 border-r-2 border-r-strict-gray-5 text-center text-2xl text-black -mr-1.5"
-                                maxlength="1"
-                            />
-                        </div>
-                        <div class="flex -mt-1">
-                            <label class="text-black text-xl m-2 sudoku_board_headers">5</label>
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_A5"
-                                class="bg-white w-13 h-12 border border-gray-700 border-l-2 border-l-strict-gray-5 text-center text-2xl text-black -mr-1.5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_B5"
-                                class="bg-white w-13 h-12 border border-gray-700  text-center text-2xl text-black -mr-2"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_C5"
-                                class="bg-white w-12 h-12 border border-gray-700 border-r-2 border-r-strict-gray-5 text-center text-2xl text-black -mr-1.5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_D5"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2 ml-1"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_E5"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_F5"
-                                class="bg-white w-12 h-12 border border-gray-700 border-r-2 border-r-strict-gray-5 text-center text-2xl text-black -mr-[4px]"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_G5"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2 ml-1"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_H5"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_I5"
-                                class="bg-white w-12 h-12 border border-gray-700 border-r-2 border-r-strict-gray-5 text-center text-2xl text-black -mr-1.5"
-                                maxlength="1"
-                            />
-                        </div>
-                        <div class="flex -mt-1">
-                            <label class="text-black text-xl m-2 sudoku_board_headers">6</label>
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_A6"
-                                class="bg-white w-13 h-12 border border-gray-700 border-l-2 border-l-strict-gray-5 border-b-2 border-b-strict-gray-5 text-center text-2xl text-black -mr-1.5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_B6"
-                                class="bg-white w-13 h-12 border border-gray-700  text-center text-2xl text-black -mr-2 border-b-2 border-b-strict-gray-5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_C6"
-                                class="bg-white w-12 h-12 border border-gray-700 border-r-2 border-r-strict-gray-5 text-center text-2xl text-black -mr-1.5 border-b-2 border-b-strict-gray-5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_D6"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2 ml-1 border-b-2 border-b-strict-gray-5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_E6"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2 border-b-2 border-b-strict-gray-5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_F6"
-                                class="bg-white w-12 h-12 border border-gray-700 border-r-2 border-r-strict-gray-5 text-center text-2xl text-black -mr-[4px] border-b-2 border-b-strict-gray-5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_G6"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2 ml-1 border-b-2 border-b-strict-gray-5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_H6"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2 border-b-2 border-b-strict-gray-5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_I6"
-                                class="bg-white w-12 h-12 border border-gray-700 border-r-2 border-r-strict-gray-5 text-center text-2xl text-black -mr-1.5 border-b-2 border-b-strict-gray-5"
-                                maxlength="1"
-                            />
-                        </div>
-                        <div class="flex -mt-0.5">
-                            <label class="text-black text-xl m-2 sudoku_board_headers">7</label>
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_A7"
-                                class="bg-white w-13 h-12 border border-gray-700 border-l-2 border-l-strict-gray-5 text-center text-2xl text-black -mr-1.5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_B7"
-                                class="bg-white w-13 h-12 border border-gray-700  text-center text-2xl text-black -mr-2"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_C7"
-                                class="bg-white w-12 h-12 border border-gray-700 border-r-2 border-r-strict-gray-5 text-center text-2xl text-black -mr-1.5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_D7"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2 ml-1"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_E7"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_F7"
-                                class="bg-white w-12 h-12 border border-gray-700 border-r-2 border-r-strict-gray-5 text-center text-2xl text-black -mr-[4px]"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_G7"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2 ml-1"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_H7"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_I7"
-                                class="bg-white w-12 h-12 border border-gray-700 border-r-2 border-r-strict-gray-5 text-center text-2xl text-black -mr-1.5"
-                                maxlength="1"
-                            />
-                        </div>
-                        <div class="flex -mt-1">
-                            <label class="text-black text-xl m-2 sudoku_board_headers">8</label>
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_A8"
-                                class="bg-white w-13 h-12 border border-gray-700 border-l-2 border-l-strict-gray-5 text-center text-2xl text-black -mr-1.5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_B8"
-                                class="bg-white w-13 h-12 border border-gray-700  text-center text-2xl text-black -mr-2"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_C8"
-                                class="bg-white w-12 h-12 border border-gray-700 border-r-2 border-r-strict-gray-5 text-center text-2xl text-black -mr-1.5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_D8"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2 ml-1"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_E8"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_F8"
-                                class="bg-white w-12 h-12 border border-gray-700 border-r-2 border-r-strict-gray-5 text-center text-2xl text-black -mr-[4px]"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_G8"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2 ml-1"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_H8"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_I8"
-                                class="bg-white w-12 h-12 border border-gray-700 border-r-2 border-r-strict-gray-5 text-center text-2xl text-black -mr-1.5"
-                                maxlength="1"
-                            />
-                        </div>
-                        <div class="flex -mt-1">
-                            <label class="text-black text-xl m-2 sudoku_board_headers">9</label>
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_A9"
-                                class="bg-white w-13 h-12 border border-gray-700 border-l-2 border-l-strict-gray-5 border-b-2 border-b-strict-gray-5 text-center text-2xl text-black -mr-1.5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_B9"
-                                class="bg-white w-13 h-12 border border-gray-700  text-center text-2xl text-black -mr-2 border-b-2 border-b-strict-gray-5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_C9"
-                                class="bg-white w-12 h-12 border border-gray-700 border-r-2 border-r-strict-gray-5 text-center text-2xl text-black -mr-1.5 border-b-2 border-b-strict-gray-5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_D9"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2 ml-1 border-b-2 border-b-strict-gray-5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_E9"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2 border-b-2 border-b-strict-gray-5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_F9"
-                                class="bg-white w-12 h-12 border border-gray-700 border-r-2 border-r-strict-gray-5 text-center text-2xl text-black -mr-[4px] border-b-2 border-b-strict-gray-5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_G9"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2 ml-1 border-b-2 border-b-strict-gray-5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_H9"
-                                class="bg-white w-13 h-12 border border-gray-700 text-center text-2xl text-black -mr-2 border-b-2 border-b-strict-gray-5"
-                                maxlength="1"
-                            />
-                            <input 
-                                type="text" 
-                                name="sudoku_board" 
-                                id="cell_I9"
-                                class="bg-white w-12 h-12 border border-gray-700 border-r-2 border-r-strict-gray-5 text-center text-2xl text-black -mr-1.5 border-b-2 border-b-strict-gray-5"
-                                maxlength="1"
-                            />
-                        </div>
-                        <br><br> 
                     </div>
+                    
                 </div>
             </div>
             <div class="flex">
-                <div class="bg-gray-200 dark:bg-strict-gray-2 p-0 h-60 border-t border-black w-[76%] flex flex-col">
+                <div class="bg-gray-200 dark:bg-strict-gray-2 p-0 h-60 border-t border-black w-[77%] flex flex-col">
                     <div class="h-10 border-b dark:border-gray-200 border-black">
                         <button type="button" class="w-20 pt-1 pb-1 border-t-gray-100 border-l-gray-50 border-b-gray-800 border-r-gray-800 bg-gray-350 hover:bg-gray-400 dark:border-t-gray-100 border-2 ml-1 dark:border-l-gray-375 dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 dark:bg-strict-gray-3 z-10 mt-0.5 font-mono font-semibold dark:hover:bg-strict-gray-2.5 dark:hover:border-t-white dark:hover:border-l-white dark:hover:border-b-black dark:hover:border-r-black" id="solver_open_log_btn">Log</button>
                         <button type="button" class="w-22 pt-1 pb-1 border-t-gray-100 border-l-gray-500 border-b-gray-800 border-r-gray-800 bg-gray-350 hover:bg-gray-400 dark:border-t-gray-100 border-2 ml-1 dark:border-l-[#545454] dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 dark:bg-strict-gray-3 z-10 mt-0.5 font-mono font-semibold dark:hover:bg-strict-gray-2.5 dark:hover:border-t-white dark:hover:border-l-[#5f5f5f] dark:hover:border-b-black dark:hover:border-r-black" id="solver_open_console_btn">Console</button>
@@ -699,15 +292,13 @@
                     </div>
                     
                 </div>
-                <div class="bg-gray-300 dark:bg-strict-gray-2 p-4 h-60 border-t dark:border-t-black w-[24%] border-l dark:border-gray-200 overflow-y-scroll">
+                <div class="bg-gray-300 dark:bg-strict-gray-2 p-4 h-60 border-t dark:border-t-black w-[23%] border-l dark:border-gray-200 overflow-y-scroll">
                     <button type="button" class="p-2 pl-3 pr-3 bg-gray-400 dark:bg-strict-gray-3 hover:bg-gray-500 dark:hover:bg-strict-gray-4 dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 border-1" id="solver_solve_sudoku_btn">Solve Sudoku</button>
                     <button type="button" class="p-2 pl-3 pr-3 bg-gray-400 dark:bg-strict-gray-3 hover:bg-gray-500 dark:hover:bg-strict-gray-4 dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 border-1 ml-2" id="solver_solve_cell_btn">Solve Cell</button>
                     <button type="button" class="p-2 pl-3 pr-3 bg-gray-400 dark:bg-strict-gray-3 hover:bg-gray-500 dark:hover:bg-strict-gray-4 dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 border-1 mt-2" id="solver_solve_column_btn">Solve Column</button>
                     <button type="button" class="p-2 pl-3 pr-3 bg-gray-400 dark:bg-strict-gray-3 hover:bg-gray-500 dark:hover:bg-strict-gray-4 dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 border-1 ml-2" id="solver_solve_row_btn">Solve Row</button>
                     <button type="button" class="p-2 pl-3 pr-3 bg-gray-400 dark:bg-strict-gray-3 hover:bg-gray-500 dark:hover:bg-strict-gray-4 dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 border-1 mt-2" id="solver_clear_sudoku_btn">Clear Sudoku</button>
                     <button type="button" class="p-2 pl-3 pr-3 bg-gray-400 dark:bg-strict-gray-3 hover:bg-gray-500 dark:hover:bg-strict-gray-4 dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 border-1 ml-2" id="solver_clear_cell_btn">Clear Cell</button>
-                    <button type="button" class="p-2 pl-3 pr-3 bg-gray-400 dark:bg-strict-gray-3 hover:bg-gray-500 dark:hover:bg-strict-gray-4 dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 border-1 mt-2" id="solver_open_console_window_btn">Open Console Window</button>
-                    <button type="button" class="p-2 pl-3 pr-3 bg-gray-400 dark:bg-strict-gray-3 hover:bg-gray-500 dark:hover:bg-strict-gray-4 dark:border-b-strict-gray-5 dark:border-r-strict-gray-5 border-1 mt-2" id="solver_open_log_window_btn">Open Log Window</button>
                 </div>
             </div>
         </div>
@@ -715,6 +306,7 @@
 
     <script src="/scripts/dark-light-toggle.js"></script>
     <script src="/scripts/solver/pg_window_settings.js" type="module"></script>
+    <script src="/scripts/solver/pg_sudoku_board_settings.js" type="module"></script>
     <script src="/scripts/solver/pg_terminal.js" type="module"></script>
     <script src="/scripts/solver-page-routing.js" type="module"></script>
 </body>
