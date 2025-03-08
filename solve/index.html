@@ -13,7 +13,7 @@
 <body id="bodyElement" class="flex flex-col h-screen">
     <div class="flex flex-grow bg-white dark:bg-strict-gray dark:text-white">
         <aside class="w-120 max-w-[24%] bg-gray-100 dark:bg-strict-gray dark:text-white dark:border-gray-200 border-black border-r-1">
-            <h2 class="mb-1 bg-light-gray-3 text-gray-700 dark:text-gray-200 dark:bg-strict-gray-2 font-bold dark:hover:bg-strict-gray-3"
+            <h2 class="mb-1 bg-light-gray-3 text-gray-700 dark:text-gray-200 dark:bg-strict-gray-2 font-bold dark:hover:bg-strict-gray-3 hover:bg-light-gray-4"
                 id="solver_window_settings_header">
                 <img src="/resources/assets/downward-arrow_dark_m.png" alt="arrow"
                     class="w-4 mb-0.5 mr-0.5 hidden dark:inline-flex" id="solver_window_settings_arrow">
@@ -67,10 +67,10 @@
                 </div>
             </div>
 
-            <h2 class="mb-1 bg-light-gray-3 text-gray-700 dark:text-gray-200 dark:bg-strict-gray-2 font-bold dark:hover:bg-strict-gray-3 mt-2" id="solver_sudoku_board_settings_header">
+            <h2 class="mb-1 bg-light-gray-3 text-gray-700 dark:text-gray-200 dark:bg-strict-gray-2 font-bold dark:hover:bg-strict-gray-3 mt-1 hover:bg-light-gray-4" id="solver_sudoku_board_settings_header">
                 <img src="/resources/assets/downward-arrow_dark_m.png" alt="arrow" class="w-4 mb-0.5 mr-0.5 hidden dark:inline-flex" id="solver_sudoku_board_settings_arrow">
                 <img src="/resources/assets/downward-arrow_light_m.png" alt="arrow" class="inline-flex w-4 mb-0.5 mr-0.5 dark:hidden" id="solver_sudoku_board_settings_arrow_light_m">
-                Sudoku Board Settings
+                Sudoku Board
             </h2>
 
             <div id="solver_sudoku_board_settings">
@@ -130,6 +130,19 @@
             
                 </div>
 
+                <div id="solver_sudoku_board_header_color"
+                    class="hover:bg-gray-300 dark:hover:bg-strict-gray-2 pl-3 flex items-center">
+            
+                    <label for="solver_sudoku_board_header_color_input" class="ml-1">Header Color: </label>
+                    <input 
+                        type="color" 
+                        name="solver_sudoku_board_header_color" 
+                        id="solver_sudoku_board_header_color_input"
+                        class="w-15 h-6 ml-16 mt-2" value="#000"
+                    >
+            
+                </div>
+
                 <div id="solver_sudoku_board_computed_text_color"
                     class="hover:bg-gray-300 dark:hover:bg-strict-gray-2 pl-3 flex items-center">
             
@@ -142,6 +155,29 @@
                     >
             
                 </div>
+
+                <div id="solver_sudoku_board_user_text_color"
+                    class="hover:bg-gray-300 dark:hover:bg-strict-gray-2 pl-3 flex items-center">
+            
+                    <label for="solver_sudoku_board_user_text_color_input" class="ml-1">User Text Color: </label>
+                    <input 
+                        type="color" 
+                        name="solver_sudoku_board_user_text_color" 
+                        id="solver_sudoku_board_user_text_color_input"
+                        class="w-15 h-6 ml-12.5 mt-2" value="#000000"
+                    >
+            
+                </div>
+            </div>
+
+            <h2 class="mb-1 bg-light-gray-3 text-gray-700 dark:text-gray-200 dark:bg-strict-gray-2 font-bold dark:hover:bg-strict-gray-3 mt-1 hover:bg-light-gray-4" id="solver_terminal_settings_header">
+                <img src="/resources/assets/downward-arrow_dark_m.png" alt="arrow" class="w-4 mb-0.5 mr-0.5 hidden dark:inline-flex" id="solver_terminal_settings_arrow">
+                <img src="/resources/assets/downward-arrow_light_m.png" alt="arrow" class="inline-flex w-4 mb-0.5 mr-0.5 dark:hidden" id="solver_terminal_settings_arrow_light_m">
+                Terminal
+            </h2>
+
+            <div>
+                
             </div>
         </aside>
         <div class="flex-grow flex flex-col">

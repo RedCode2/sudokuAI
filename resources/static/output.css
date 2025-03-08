@@ -737,6 +737,18 @@
   .ml-11 {
     margin-left: calc(var(--spacing) * 11);
   }
+  .ml-12 {
+    margin-left: calc(var(--spacing) * 12);
+  }
+  .ml-12\.5 {
+    margin-left: calc(var(--spacing) * 12.5);
+  }
+  .ml-15 {
+    margin-left: calc(var(--spacing) * 15);
+  }
+  .ml-16 {
+    margin-left: calc(var(--spacing) * 16);
+  }
   .ml-17 {
     margin-left: calc(var(--spacing) * 17);
   }
@@ -902,9 +914,6 @@
   .grid-cols-10 {
     grid-template-columns: repeat(10, minmax(0, 1fr));
   }
-  .grid-cols-12 {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
   .flex-col {
     flex-direction: column;
   }
@@ -1039,6 +1048,10 @@
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
   }
+  .border-b-1 {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 1px;
+  }
   .border-b-2 {
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 2px;
@@ -1055,14 +1068,35 @@
     --tw-border-style: none;
     border-style: none;
   }
+  .border-\[\$\{prev_border_color\}\] {
+    border-color: ${prev border color};
+  }
+  .border-\[\$\{this\.value\}\] {
+    border-color: ${this.value};
+  }
+  .border-\[\$\{\}\] {
+    border-color: ${};
+  }
   .border-black {
     border-color: var(--color-black);
+  }
+  .border-gray-300 {
+    border-color: var(--color-gray-300);
+  }
+  .border-gray-500 {
+    border-color: var(--color-gray-500);
   }
   .border-t-gray-100 {
     border-top-color: var(--color-gray-100);
   }
   .border-r-gray-800 {
     border-right-color: var(--color-gray-800);
+  }
+  .border-b-gray-400 {
+    border-bottom-color: var(--color-gray-400);
+  }
+  .border-b-gray-500 {
+    border-bottom-color: var(--color-gray-500);
   }
   .border-b-gray-800 {
     border-bottom-color: var(--color-gray-800);
@@ -1075,12 +1109,6 @@
   }
   .bg-\[\#fdfdfd\] {
     background-color: #fdfdfd;
-  }
-  .bg-\[\#ffffff\] {
-    background-color: #ffffff;
-  }
-  .bg-\[\$\{\}\] {
-    background-color: ${};
   }
   .bg-blue-500 {
     background-color: var(--color-blue-500);
@@ -1438,6 +1466,13 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-green-700);
+      }
+    }
+  }
+  .hover\:bg-light-gray-2 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-light-gray-2);
       }
     }
   }

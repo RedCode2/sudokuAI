@@ -79,4 +79,78 @@ document.getElementById('solver_show_headers').addEventListener('click', functio
 
 document.getElementById('solver_sudoku_board_background_color_input').addEventListener('change', function() {
     document.getElementById('solver_sudoku_board_background').style.backgroundColor = this.value;
+
+    solver_log.innerHTML += '<br>' + $convert_to_logmsg({
+        task: `Change sudoku_board bgcolor to ${this.value}`,
+        success: true,
+        success_msg: "Success",
+        failure_msg: "Failed",
+        pg_theme: localStorage.getItem('solver_window_theme'),
+        show_time_of_log: localStorage.getItem('show_log_time')
+    })
 })
+
+let prev_border_color = '#000000';
+
+document.getElementById('solver_sudoku_board_border_color_input').addEventListener('change', function () {
+    const alphabets = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
+
+    for (let i = 0; i < 9; i++) {
+        for (let j = 1; j < 10; j++) {
+            const cell = document.getElementById(`cell_${alphabets[i]}${j}`);
+            cell.style.borderColor = prev_border_color;
+            cell.style.borderColor = this.value;
+        }
+    }
+
+    prev_border_color = this.value;
+
+    solver_log.innerHTML += '<br>' + $convert_to_logmsg({
+        task: `Change sudoku_board border color to ${this.value}`,
+        success: true,
+        success_msg: "Success",
+        failure_msg: "Failed",
+        pg_theme: localStorage.getItem('solver_window_theme'),
+        show_time_of_log: localStorage.getItem('show_log_time')
+    })
+});
+
+document.getElementById('solver_sudoku_board_header_color_input').addEventListener('change', function () {
+    Array.from(document.getElementsByClassName('sudoku_board_headers')).forEach(element => {
+        element.style.color = this.value;
+    })
+
+    solver_log.innerHTML += '<br>' + $convert_to_logmsg({
+        task: `Change sudoku_board header color to ${this.value}`,
+        success: true,
+        success_msg: "Success",
+        failure_msg: "Failed",
+        pg_theme: localStorage.getItem('solver_window_theme'),
+        show_time_of_log: localStorage.getItem('show_log_time')
+    })
+});
+
+let prev_user_text_color = '#000000';
+
+document.getElementById('solver_sudoku_board_user_text_color_input').addEventListener('change', function () {
+    const alphabets = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
+
+    for (let i = 0; i < 9; i++) {
+        for (let j = 1; j < 10; j++) {
+            const cell = document.getElementById(`cell_${alphabets[i]}${j}`);
+            cell.style.color = prev_user_text_color;
+            cell.style.color = this.value;
+        }
+    }
+
+    prev_user_text_color = this.value;
+
+    solver_log.innerHTML += '<br>' + $convert_to_logmsg({
+        task: `Change sudoku_board user text color to ${this.value}`,
+        success: true,
+        success_msg: "Success",
+        failure_msg: "Failed",
+        pg_theme: localStorage.getItem('solver_window_theme'),
+        show_time_of_log: localStorage.getItem('show_log_time')
+    })
+});
