@@ -12,7 +12,13 @@ function $put_log_msg_vals_in_span(color, msg) {
 
 export function $convert_to_logmsg(LogInput) {
     const theme = localStorage.getItem("solver_window_theme");
-    const showTime = LogInput.show_time_of_log;
+    let showTime;
+
+    if (LogInput.show_time_of_log === "true") {
+        showTime = true;
+    } else {
+        showTime = false;
+    }
 
     if (theme === "dark") {
         const timeColor = localStorage.getItem("solver_time_of_log_color_dark_m");
