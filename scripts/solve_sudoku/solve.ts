@@ -30,22 +30,17 @@ export function $solve_sudoku(board: (number | string)[][]): number[][] {
             if (board[current_col_number][current_row_number] === '.') {
                 ({ current_col_number, current_row_number } = move_to_next_cell(current_col_number, current_row_number));
             } else {
-                if (current_col_number !== 9) {
-                    if (board[current_col_number + 1][current_row_number] === '.') {
-                        finding_free_cell = true;
-                    } else {
-                        finding_free_cell = false;
-                    }
-                } else {
-                    if (board[1][current_row_number + 1] === '.') {
-                        finding_free_cell = true;
-                    } else {
-                        finding_free_cell = false;
-                    }
-                }
+                finding_free_cell = false;
             }
         }
 
+        let finding_cell_val: boolean = true;
+
+        while (finding_cell_val) {
+            let temp_cell_val_attempt: number = __generate_random_number(1, 9);
+
+
+        }
 
     }
 
