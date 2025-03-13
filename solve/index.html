@@ -74,20 +74,6 @@
             </h2>
 
             <div id="solver_sudoku_board_settings">
-                <div id="solver_differentiate_computed_user_values"
-                    class="hover:bg-gray-300 dark:hover:bg-strict-gray-2 pl-3 flex items-center">
-                    <input 
-                        type="checkbox" 
-                        name="solver_differentiate_computed_user_values" 
-                        id="solver_differentiate_computed_user_values_checkbox"
-                        class="peer sr-only" 
-                        checked
-                    >
-                    <div
-                        class="w-3.5 h-3.5 border border-black peer-checked:bg-blue-600 dark:peer-checked:bg-gray-300 peer-checked:border-black peer-checked:border-1 peer-checked:bg-clip-content rounded-sm inline-flex bg-gray-400 dark:bg-strict-gray-3 dark:border-black">
-                    </div>
-                    <label for="solver_differentiate_computed_user_values_checkbox" class="ml-1">Differentiate Computed and User Values</label>
-                </div>
 
                 <div id="solver_show_headers"
                     class="hover:bg-gray-300 dark:hover:bg-strict-gray-2 pl-3 flex items-center">
@@ -143,28 +129,15 @@
             
                 </div>
 
-                <div id="solver_sudoku_board_computed_text_color"
-                    class="hover:bg-gray-300 dark:hover:bg-strict-gray-2 pl-3 flex items-center">
-            
-                    <label for="solver_sudoku_board_computed_text_color_input" class="ml-1">Computed Text Color: </label>
-                    <input 
-                        type="color" 
-                        name="solver_sudoku_board_computed_text_color" 
-                        id="solver_sudoku_board_computed_text_color_input"
-                        class="w-15 h-6 ml-2 mt-2" value="#0000FF"
-                    >
-            
-                </div>
-
                 <div id="solver_sudoku_board_user_text_color"
                     class="hover:bg-gray-300 dark:hover:bg-strict-gray-2 pl-3 flex items-center">
             
-                    <label for="solver_sudoku_board_user_text_color_input" class="ml-1">User Text Color: </label>
+                    <label for="solver_sudoku_board_user_text_color_input" class="ml-1">Text Color: </label>
                     <input 
                         type="color" 
                         name="solver_sudoku_board_user_text_color" 
                         id="solver_sudoku_board_user_text_color_input"
-                        class="w-15 h-6 ml-12.5 mt-2" value="#000000"
+                        class="w-15 h-6 ml-21.5 mt-2" value="#000000"
                     >
             
                 </div>
@@ -208,7 +181,7 @@
                         <span>I</span>
                     </div>
                     <div class="flex justify-center items-center text-black text-xl -ml-15">
-                        <div class="grid grid-cols-10 gap-0 space-x-0 space-y-0 p-1 text-black" id="solver_sudoku_board_9x9">
+                        <div class="grid grid-cols-10 gap-0 space-x-0 text-black space-y-0 p-1" id="solver_sudoku_board_9x9">
 
                             <!-- Row A -->
                             <div class="row-start-1 row-end-2 flex items-center justify-center text-2xl font-normal sudoku_board_headers">1</div>
@@ -358,6 +331,8 @@
     <script src="/scripts/solver/pg_sudoku_board_settings.js" type="module"></script>
     <script src="/scripts/solver/pg_terminal_settings.js" type="module"></script>
     <script src="/scripts/solver/pg_terminal.js" type="module"></script>
+    <script src="/scripts/solve_sudoku/solve.js" type="module"></script>
+    <script src="/scripts/solver/solve_sudoku.js" type="module"></script>
     <script src="/scripts/solver-page-routing.js" type="module"></script>
 </body>
 
