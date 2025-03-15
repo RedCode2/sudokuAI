@@ -21,5 +21,24 @@ document.getElementById("solver_solve_sudoku_btn").addEventListener("click", () 
 
     solveSudoku(sudokuBoard);
 
-    translate_to_board_GUI(sudokuBoard);
+    translate_to_board_GUI(sudokuBoard, 0, 0, 8, 8);
 });
+
+document.getElementById('solver_clear_sudoku_btn').addEventListener('click', () => {
+    const alphabets = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
+
+    solver_log.innerHTML += '<br>' + $convert_to_logmsg({
+        task: "Clear sudoku board",
+        success: true,
+        success_msg: "Success",
+        failure_msg: "",
+        pg_theme: localStorage.getItem('solver_window_theme'),
+        show_time_of_log: localStorage.getItem('show_log_time')    
+    })
+
+    for (let i = 1; i <= 9; i++) {
+        for (let j = 1; j <= 9; j++) {
+            document.getElementById(`cell_${alphabets[i-1]}${j}`).value = '';
+        }
+    }
+})

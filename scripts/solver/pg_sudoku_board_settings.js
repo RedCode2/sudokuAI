@@ -157,21 +157,3 @@ document.getElementById('solver_sudoku_board_user_text_color_input').addEventLis
         show_time_of_log: localStorage.getItem('show_log_time')
     })
 });
-// Driver Code
-const mat = [
-    [3, 0, 6, 5, 0, 8, 4, 0, 0],
-    [5, 2, 0, 0, 0, 0, 0, 0, 0],
-    [0, 8, 7, 0, 0, 0, 0, 3, 1],
-    [0, 0, 3, 0, 1, 0, 0, 8, 0],
-    [9, 0, 0, 8, 6, 3, 0, 0, 5],
-    [0, 5, 0, 0, 9, 0, 6, 0, 0],
-    [1, 3, 0, 0, 0, 0, 2, 5, 0],
-    [0, 0, 0, 0, 0, 0, 0, 7, 4],
-    [0, 0, 5, 2, 0, 6, 3, 0, 0]
-];
-
-solveSudoku(mat);
-
-for (let i = 0; i < mat.length; i++) {
-    console.log(mat[i]);
-}
