@@ -2,6 +2,7 @@ import { translate_to_2D_arr } from "../modules/translate_to_2D_arr";
 import { translate_to_board_GUI } from "../modules/translate_to_board_GUI";
 
 import { solveSudoku } from "../modules/solve";
+import { isValidSudoku } from "../modules/solve";
 import { $convert_to_logmsg } from "../modules/solver_pg_terminal";
 
 let solver_log = document.getElementById('solver_log')
@@ -19,7 +20,27 @@ document.getElementById("solver_solve_sudoku_btn").addEventListener("click", () 
         show_time_of_log: localStorage.getItem('show_log_time')    
     })
 
-    solveSudoku(sudokuBoard);
+    if (isValidSudoku(sudokuBoard)) {
+        solveSudoku(sudokuBoard);
+
+        solver_log.innerHTML += '<br>' + $convert_to_logmsg({
+            task: "Solve Sudoku",
+            success: true,
+            success_msg: "Success",
+            failure_msg: "",
+            pg_theme: localStorage.getItem('solver_window_theme'),
+            show_time_of_log: localStorage.getItem('show_log_time')    
+        })
+    } else {
+        solver_log.innerHTML += '<br>' + $convert_to_logmsg({
+            task: "Solve Sudoku",
+            success: false,
+            success_msg: "",
+            failure_msg: "Failed. Invalid Sudoku",
+            pg_theme: localStorage.getItem('solver_window_theme'),
+            show_time_of_log: localStorage.getItem('show_log_time')    
+        })
+    }
 
     translate_to_board_GUI(sudokuBoard, 0, 0, 8, 8);
 });

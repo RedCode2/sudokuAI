@@ -5,5 +5,7 @@
     "pg_ff mono": "set_ff('mono')",
     "pg_fs small": "set_fs('xs')",
     "pg_fs medium": "set_fs('sm')",
-    "pg_fs large": "set_fs('md')"
+    "pg_fs large": "set_fs('md')",
+    "solve_sudoku": "solve_sudoku()",
+    "clear_sudoku": "clear_sudoku()"
 }
