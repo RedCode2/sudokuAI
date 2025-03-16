@@ -8,11 +8,26 @@
     <link rel="stylesheet" href="/resources/static/output.css">
     <link rel="shortcut icon" href="/public/sudoku_favicon.ico" type="image/x-icon">
 </head>
-<body class="flex flex-col h-screen">
+<body class="flex flex-col h-screen bg-gray-100">
+    <div class="relative"> <!-- Container for positioning context -->
+        <!-- Other elements in your layout -->
+        <div>
+            <!-- Your other content goes here -->
+        </div>
+    
+        <!-- Back Button -->
+        <button
+            type="button"
+            class="absolute top-0 left-0 w-15 h-20 text-4xl bg-gray-100 cursor-pointer hover:bg-gray-200 rounded-lg m-1 -mb-5"
+            id="back_to_home_page_btn"
+        >
+            &leftarrow;
+        </button>
+    </div>
     <div class="flex-grow flex flex-col">
-        <div class="flex-grow bg-gray-100 dark:bg-strict-gray overflow-y-scroll overflow-x-scroll">
-            <div class="mr-20 mt-2 p-3 w-[50%] ml-[25%]" style="background-color: #ffffff;" id="solver_sudoku_board_background">
-                <div class="text-black text-xl space-x-[27px] -ml-2 justify-center flex flex-wrap sudoku_board_headers">
+        <div class="flex-grow bg-gray-100 dark:bg-strict-gray">
+            <div class="mr-20 mt-2 p-3 w-[50%] ml-[25%]" style="background-color: #ffffff;" id="generator_sudoku_board_background">
+                <div class="text-black text-xl space-x-[36px] -ml-2 justify-center flex flex-wrap sudoku_board_headers">
                     <span>A</span>
                     <span>B</span>
                     <span>C</span>
@@ -24,7 +39,7 @@
                     <span>I</span>
                 </div>
                 <div class="flex justify-center items-center text-black text-xl -ml-15">
-                    <div class="grid grid-cols-10 gap-0 space-x-0 text-black space-y-0 p-1" id="solver_sudoku_board_9x9">
+                    <div class="grid grid-cols-10 gap-0 space-x-0 text-black space-y-0 p-1" id="generator_sudoku_board_9x9">
 
                         <!-- Row A -->
                         <div class="row-start-1 row-end-2 flex items-center justify-center text-2xl font-normal sudoku_board_headers">1</div>
@@ -134,10 +149,14 @@
                         <input id="cell_I8" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-b-2 focus:outline-none focus:border-blue-500">
                         <input id="cell_I9" type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-normal border border-black border-b-2 border-r-2 focus:outline-none focus:border-blue-500">
                     </div>
-                </div>
-                
+                </div>    
             </div>
+            <button type="button" id="generate_sudoku_btn" class="ml-[40%] bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded cursor-pointer mt-4">Generate</button>
+            <button type="button" id="clear_sudoku_btn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded cursor-pointer mt-4 ml-3">Clear</button>
         </div>
     </div>
+
+    <script type="module" src="/scripts/generator/pg_generator.js"></script>
+    <script type="module" src="/scripts/solver-page-routing.js"></script>
 </body>
 </html>
