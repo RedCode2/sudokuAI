@@ -8,6 +8,12 @@
 
     <link rel="stylesheet" href="/resources/static/output.css">
     <link rel="shortcut icon" href="/public/sudoku_favicon.ico" type="image/x-icon">
+
+    <script>
+        if (!(localStorage.getItem("solver_window_theme"))) {
+            localStorage.setItem("solver_window_theme", "dark");
+        }
+    </script>
 </head>
 
 <body id="bodyElement" class="flex flex-col h-screen">
