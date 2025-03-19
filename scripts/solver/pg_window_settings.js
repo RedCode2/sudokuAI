@@ -41,10 +41,11 @@ function set_and_save_fs(localStorageKey, fontSize) {
     localStorage.setItem(localStorageKey, fontSize);
 }
 
-if (localStorage.getItem('solver_window_theme') === 'dark') {
-    document.documentElement.classList.add('dark');
+if (localStorage.getItem('solver_window_theme') === 'light') {
+    document.documentElement.classList.add('light');
 } else {
-    document.documentElement.classList.remove('dark');
+    document.documentElement.classList.remove('light');
+    document.documentElement.classList.add('dark')
 }
 
 if (solver_window_fs_selectbox_change_to_font_size_small.selected) {

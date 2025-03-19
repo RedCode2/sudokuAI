@@ -50,7 +50,7 @@ document.getElementById('show_log_time').addEventListener('click', function() {
             show_time_of_log: localStorage.getItem('show_log_time')
         })
     } else {
-        // localStorage.setItem('show_log_time', false);
+        localStorage.setItem('show_log_time', false);
         solver_log.innerHTML += '<br>' + $convert_to_logmsg({
             task: `Show Log Time`,
             success: false,

@@ -14,17 +14,22 @@ export function $convert_to_logmsg(LogInput) {
     const theme = localStorage.getItem("solver_window_theme");
     let showTime;
 
-    if (LogInput.show_time_of_log === "true") {
-        showTime = true;
-    } else {
+    if (LogInput.show_time_of_log === "false") {
         showTime = false;
+    } else {
+        showTime = true;
     }
 
     if (theme === "dark") {
-        const timeColor = localStorage.getItem("solver_time_of_log_color_dark_m");
-        const taskColor = localStorage.getItem("solver_log_task_color_dark_m");
-        const successColor = localStorage.getItem("solver_log_success_color_dark_m");
-        const errorColor = localStorage.getItem("solver_log_error_color_dark_m");
+        let timeColor = localStorage.getItem("solver_time_of_log_color_dark_m");
+        let taskColor = localStorage.getItem("solver_log_task_color_dark_m");
+        let successColor = localStorage.getItem("solver_log_success_color_dark_m");
+        let errorColor = localStorage.getItem("solver_log_error_color_dark_m");
+
+        if (timeColor === null) { timeColor = "#05df72"; }
+        if (taskColor === null) { taskColor = "#b293c8" }
+        if (successColor === null) { successColor = "#7bf1a8" }
+        if (errorColor === null) { errorColor = "#e9b58a" }
 
         if (LogInput.success) {
             let logMessage = "";
@@ -42,10 +47,15 @@ export function $convert_to_logmsg(LogInput) {
             return logMessage;
         }
     } else {
-        const timeColor = localStorage.getItem("solver_time_of_log_color_light_m");
-        const taskColor = localStorage.getItem("solver_log_task_color_light_m");
-        const successColor = localStorage.getItem("solver_log_success_color_light_m");
-        const errorColor = localStorage.getItem("solver_log_error_color_light_m");
+        let timeColor = localStorage.getItem("solver_time_of_log_color_light_m");
+        let taskColor = localStorage.getItem("solver_log_task_color_light_m");
+        let successColor = localStorage.getItem("solver_log_success_color_light_m");
+        let errorColor = localStorage.getItem("solver_log_error_color_light_m");
+
+        if (timeColor === null) { timeColor = "#73b39d" };
+        if (taskColor === null) { taskColor = "#8c78a9" };
+        if (successColor === null) { successColor = "#5eb18f" }
+        if (errorColor === null) { errorColor = "#c48c66" }
 
         if (LogInput.success) {
             let logMessage = "";

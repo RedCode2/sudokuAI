@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku AI | About</title>
+
+    <link rel="shortcut icon" href="/public/sudoku_favicon.ico" type="image/x-icon">
+
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          margin: 20px;
+          padding: 0;
+          background-color: #f9f9f9;
+          color: #333;
+        }
+    
+        h1 {
+          color: #ff4d4d;
+          text-align: center;
+        }
+    
+        .container {
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 20px;
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    
+        a:hover {
+          text-decoration: underline;
+        }
+        code {
+          background-color: #2b2b2b;
+          border-radius: 2px;
+          display: inline-block;
+          padding: 5px 10px;
+          color: #6bff4d;
+        }
+      </style>
+</head>
+<body>
+    <button type="button"
+      id="back_to_home_page_btn"
+      style="position: fixed; top: 20px; left: 20px; padding: 10px 20px; background-color: #ff4d4d; color: #fff; border: none; border-radius: 5px; font-size: 26px; cursor: pointer;"
+      >
+      &leftarrow;
+    </button>
+
+    <div class="container">
+        <h1>About Sudoku AI</h1>
+
+        <h2>Introduction</h2>
+        <p>This project is made for solving <a href="https://en.wikipedia.org/wiki/Sudoku">Sudoku Puzzles</a>. It can <a href="/solve/index.html">Solve a Sudoku Puzzle</a> for you, or <a href="/generate/index.html">generate a Sudoku Puzzle</a> for you to solve. This project is open source. View the source of this project by clicking on <a href="https://github.com/RedCode2/sudokuAI">this link</a>.</p>
+    
+        <h2>How to use the Sudoku Solver?</h2>
+        
+        <ol type="1">
+            <li>Enter your sudoku board in each cell of the board.</li>
+            <img src="/resources/assets/about-pg/sudoku_problem.png" width="700px" alt="Sudoku Problem">
+            <li>Click on the Solve Sudoku button present at the bottom right panel of the Sudoku Solver.</li>
+            <img src="/resources/assets/about-pg/solve_sudoku_btn.png" alt="solve_sudoku_btn">
+            <li>The Sudoku Puzzle will get solved in under a second and will be displayed on the board. However, the sudoku won't solve if the question itself is invalid. So check your question first before using the Sudoku Solver.</li>
+            <img src="/resources/assets/about-pg/sudoku_solved.png" width="700px" alt="Sudoku Solved">
+        </ol>
+
+        <h2>How to use the Sudoku Solver Interface?</h2>
+
+        <ul>
+            <li>To change window settings, use the following component present at the Sudoku Solver Sidebar. It's recommended to not change any of these settings as the default look is optimized for the Sudoku Solver.</li>
+            <img src="/resources/assets/about-pg/window_settings.png" alt="Window Settings">
+            <li>To change the appearance of the Sudoku Board, use the following component present at the Sudoku Solver Sidebar. These settings are switched to default after reloading the page.</li>
+            <img src="/resources/assets/about-pg/sudoku_board_settings.png" alt="Sudoku Board Settings">
+        </ul>
+
+        <h2>Command List</h2>
+
+        <ul>
+          <li style="margin-top: 5px;"><code>pg_ff default</code>: Changes the font family of the page to default.</li>
+          <li style="margin-top: 5px;"><code>pg_ff sans</code>: Changes the font family of the page to sans-serif.</li>
+          <li style="margin-top: 5px;"><code>pg_ff serif</code>: Changes the font family of the page to serif.</li>
+          <li style="margin-top: 5px;"><code>pg_ff mono</code>: Changes the font family of the page to monospace.</li>
+          <li style="margin-top: 5px;"><code>pg_fs small</code>: Changes the font size of the page to small (Default & Recommended).</li>
+          <li style="margin-top: 5px;"><code>pg_fs medium</code>: Changes the font size of the page to medium.</li>
+          <li style="margin-top: 5px;"><code>pg_fs large</code>: Changes the font size of the page to large.</li>
+          <li style="margin-top: 5px;"><code>solve_sudoku</code>: Solves the Sudoku Board.</li>
+          <li style="margin-top: 5px;"><code>clear_board</code>: Clears the Sudoku Board.</li>
+        </ul>
+    </div>
+
+    <script type="module" src="/scripts/solver-page-routing.js"></script>
+</body>
+</html>
