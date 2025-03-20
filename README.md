@@ -1,4 +1,4 @@
----
+![Banner](https://github.com/RedCode2/sudokuAI/blob/main/resources/assets/banner.png?raw=true)
 
 # SudokuAI (Not for phone)
 
