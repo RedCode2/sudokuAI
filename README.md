@@ -9,6 +9,7 @@ SudokuAI is a tool that generates and solves Sudoku puzzles. It runs locally on 
 ## Features
 
 - **Generate Sudoku Puzzles**: Create random Sudoku puzzles for you to solve.
+- **Highly Interactive Solver Page**: Customizable solver page, Sudoku board, log etc.
 - **Solve Sudoku Puzzles**: Input your own Sudoku puzzle and let the AI solve it for you.
 - **Interactive Interface**: Easy-to-use interface for interacting with the Sudoku board.
 - **A Custom Log Component**: Logs messages when interacting with the solver interface.
