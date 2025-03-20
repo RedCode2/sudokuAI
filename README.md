@@ -11,6 +11,8 @@ SudokuAI is a tool that generates and solves Sudoku puzzles. It runs locally on 
 - **Generate Sudoku Puzzles**: Create random Sudoku puzzles of varying difficulty levels.
 - **Solve Sudoku Puzzles**: Input your own Sudoku puzzle and let the AI solve it for you.
 - **Interactive Interface**: Easy-to-use interface for interacting with the Sudoku board.
+- **A Custom Log Component**: Logs messages when interacting with the solver interface.
+- **A Custom Console**: Enter commands for interacting with the solver interface.
 
 ---
 
@@ -28,8 +30,8 @@ Before running the project, ensure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/SudokuAI.git
-cd SudokuAI
+git clone https://github.com/RedCode2/sudokuAI
+cd sudokuAI
 ```
 
 ### 2. Install Dependencies
@@ -40,13 +42,13 @@ npm install
 
 ### 3. Run the Project
 
-To start the SudokuAI locally, run:
+To start SudokuAI locally, run:
 
 ```bash
 npm run dev
 ```
 
-This will start the development server. Open your browser and navigate to `http://localhost:3000` to access the SudokuAI interface.
+This will start the development server. Open your browser and navigate to `http://localhost:5178` to access SudokuAI.
 
 ---
 
@@ -55,53 +57,32 @@ This will start the development server. Open your browser and navigate to `http:
 ### Generating a Sudoku Puzzle
 
 1. Open the application in your browser.
-2. Click the **"Generate Sudoku"** button.
-3. Select the desired difficulty level (Easy, Medium, Hard).
+2. Click on the **"Generate Sudoku"** link in the home page.
+3. Click the **"Generate Sudoku"** button.
 4. The Sudoku board will be populated with a new puzzle.
+5. To clear the Sudoku board, click on **"Clear Sudoku"**.
 
 ### Solving a Sudoku Puzzle
 
 1. Open the application in your browser.
 2. Input your Sudoku puzzle into the board (leave empty cells as blank).
-3. Click the **"Solve Sudoku"** button.
-4. The AI will solve the puzzle and display the solution on the board.
+3. Click the **"Solve Sudoku"** button present at the bottom-right panel of your browser.
+4. The Algorithm will solve the puzzle and display the solution on the board.
 
 ---
 
-## Available Scripts
+## Available Scripts on the Sudoku Solver Console
 
-- `npm run dev`: Starts the development server. Use this for running the project locally.
-- `npm run build`: Builds the project for production. (Not required for local use.)
-- `npm start`: Starts the production server (if applicable).
-- `npm test`: Runs tests (if applicable).
-
----
-
-## Project Structure
-
-```
-SudokuAI/
-├── public/              # Static assets (e.g., images, favicon)
-├── src/                 # Source code
-│   ├── components/      # React components (if using React)
-│   ├── utils/           # Utility functions (e.g., Sudoku solver/generator)
-│   ├── App.js           # Main application component
-│   └── index.js         # Entry point
-├── package.json         # Project dependencies and scripts
-└── README.md            # This file
-```
-
----
-
-## Contributing
-
-Contributions are welcome! If you'd like to contribute, please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/YourFeatureName`).
-3. Commit your changes (`git commit -m 'Add some feature'`).
-4. Push to the branch (`git push origin feature/YourFeatureName`).
-5. Open a pull request.
+- `pg_ff sans`: Changes the Font Family of the page to Sans Serif.
+- `pg_ff serif`: Changes the Font Family of the page to Serif.
+- `pg_ff mono`: Changes the Font Family of the page to Monospace.
+- `pg_ff default`: Changes the Font Family of the page to default (Sans Serif).
+- `pg_fs small`: Changes the Font Size of the page to Small.
+- `pg_fs medium`: Changes the Font Size of the page to Medium.
+- `pg_fs large`: Changes the Font Size of the page to Large
+- `pg_fs default`: Changes the Font Size of the page to default (Small).
+- `solve_sudoku`: Solves the Sudoku Puzzle.
+- `clear_sudoku`: Clears the Sudoku board.
 
 ---
 
@@ -114,8 +95,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Acknowledgments
 
 - Inspired by classic Sudoku puzzles.
-- Built with [React](https://reactjs.org/) (or any other framework/library you're using).
+- Styled with [Tailwind CSS](https://tailwindcss.com/).
+- Some useful code using [TypeScript](https://www.typescriptlang.org/)
 
 ---
-
-This structure ensures that users can easily set up and run your SudokuAI project locally. Since `npm run dev` is the primary command for running the project in development mode, it’s perfectly fine to include it in the instructions. If you later decide to deploy the project (e.g., using GitHub Pages or another hosting service), you can add additional instructions for building and deploying the project.
